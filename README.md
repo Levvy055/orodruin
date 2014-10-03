@@ -1,13 +1,5 @@
 # Orodruin
 
-[![Build Status](https://travis-ci.org/hauleth/orodruin.svg?branch=master)](https://travis-ci.org/hauleth/orodruin)
-[![Code Climate](https://codeclimate.com/github/hauleth/orodruin.png)](https://codeclimate.com/github/hauleth/orodruin)
-[![Coverage Status](https://coveralls.io/repos/hauleth/orodruin/badge.png)](https://coveralls.io/r/hauleth/orodruin)
-[![Inline docs](http://inch-ci.org/github/hauleth/orodruin.png)](http://inch-ci.org/github/hauleth/orodruin)
-[![Dependency Status](https://gemnasium.com/hauleth/orodruin.svg)](https://gemnasium.com/hauleth/orodruin)
-[![Security](https://hakiri.io/github/hauleth/orodruin/master.svg)](https://hakiri.io/github/hauleth/orodruin/master)
-[![Stories in Ready](https://badge.waffle.io/hauleth/orodruin.png?label=ready)](https://waffle.io/hauleth/orodruin)
-
 Easy convention management system.
 
 It provides:
@@ -58,6 +50,21 @@ The best way to install Ruby is using [rbenv][rbenv].
         ./bin/foreman start
 
 5. Visit <http://localhost:5000>.
+
+## Badges
+
+* project build
+  [![Build Status](https://travis-ci.org/hauleth/orodruin.svg?branch=master)](https://travis-ci.org/hauleth/orodruin)
+  [![Code Climate](https://codeclimate.com/github/hauleth/orodruin.png)](https://codeclimate.com/github/hauleth/orodruin)
+  [![Coverage Status](https://coveralls.io/repos/hauleth/orodruin/badge.png)](https://coveralls.io/r/hauleth/orodruin)
+* documentation
+  [![Inline docs](http://inch-ci.org/github/hauleth/orodruin.png)](http://inch-ci.org/github/hauleth/orodruin)
+* deps/security
+  [![Dependency Status](https://gemnasium.com/hauleth/orodruin.svg)](https://gemnasium.com/hauleth/orodruin)
+  [![Security](https://hakiri.io/github/hauleth/orodruin/master.svg)](https://hakiri.io/github/hauleth/orodruin/master)
+* design/progress
+  [![Stories in Ready](https://badge.waffle.io/hauleth/orodruin.png?label=ready)](https://waffle.io/hauleth/orodruin)
+  [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/hauleth/orodruin?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 ## Contribution
 
