@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/plataformatec/devise.git
-  revision: ee69d41fc1707c5b7b2630034dc1d120b6200f56
+  revision: 1d8890b77372b9c4fd3ec8e9b4963d76774ed33c
   branch: lm-rails-4-2
   specs:
     devise (3.3.0)
@@ -75,7 +75,7 @@ GEM
       slim (>= 1.3.6, < 3.0)
       terminal-table (~> 1.4)
     builder (3.2.2)
-    bullet (4.13.2)
+    bullet (4.14.0)
       activesupport (>= 3.0.0)
       uniform_notifier (>= 1.6.0)
     byebug (3.5.1)
@@ -233,6 +233,8 @@ GEM
     minitest (5.4.2)
     minitest-extra-matchers (0.0.6)
       minitest (>= 4.0)
+    minitest-metadata (0.6.0)
+      minitest (>= 4.7, < 6.0)
     minitest-reporters (1.0.5)
       ansi
       builder
@@ -275,7 +277,7 @@ GEM
       omniauth (~> 1.0)
       omniauth-oauth2 (~> 1.1)
     orm_adapter (0.5.0)
-    parser (2.2.0.pre.4)
+    parser (2.2.0.pre.5)
       ast (>= 1.1, < 3.0)
       slop (~> 3.4, >= 3.4.5)
     pg (0.17.1)
@@ -427,7 +429,7 @@ GEM
       hitimes
     tins (1.3.3)
     tomparse (0.4.2)
-    turbolinks (2.3.0)
+    turbolinks (2.4.0)
       coffee-rails
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
@@ -492,6 +494,7 @@ DEPENDENCIES
   meta_request
   mini_magick
   minitest-extra-matchers
+  minitest-metadata
   minitest-reporters
   omniauth
   omniauth-facebook

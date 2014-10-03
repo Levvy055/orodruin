@@ -128,6 +128,7 @@ group :test do
   # Use MiniTest::Spec instead of MiniTest::Unit
   gem 'minitest-extra-matchers'
   gem 'minitest-reporters'
+  gem 'minitest-metadata', require: false
   gem 'capybara_minitest_spec'
 
   # Nicer mocking library
