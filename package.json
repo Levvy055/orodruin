@@ -1,9 +1,0 @@
-{
-  "name": "orodruin",
-  "repository": "git://github.com/hauleth/orodruin.git",
-  "devDependencies": {
-    "gulp": "~3.8.0",
-    "gulp-jshint": "*",
-    "jshint-stylish": "*"
-  }
-}
