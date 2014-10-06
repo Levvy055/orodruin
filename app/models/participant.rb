@@ -4,5 +4,5 @@ class Participant < ActiveRecord::Base
   belongs_to :user
   belongs_to :convention
 
-  validates :user, presence: true
+  validates :convention, presence: true
 end

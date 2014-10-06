@@ -49,7 +49,7 @@ class Ability
     # See the wiki for details:
     # https://github.com/bryanrite/cancancan/wiki/Defining-Abilities
 
-    [Post, Convention].each do |model|
+    [Blog::Post, Convention].each do |model|
       can :read, model
     end
   end
@@ -59,7 +59,7 @@ class Ability
   end
 
   def organisator
-    can :manage, Post
+    can :manage, Blog::Post
     can :manage, Participant
     can :manage, Role
   end
