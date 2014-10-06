@@ -40,7 +40,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 
 # User management
-gem 'devise', github: 'plataformatec/devise', branch: 'lm-rails-4-2'
+gem 'devise', '~> 3.4.0'
 gem 'cancancan', '~> 1.9.0'
 gem 'rolify', '~> 3.4.0'
 
@@ -119,9 +119,6 @@ group :development, :test do
   # Fixtures replacement
   gem 'fabrication'
   gem 'ffaker'
-
-  # JavaScript test runner
-  gem 'konacha'
 end
 
 group :test do
@@ -139,6 +136,9 @@ group :test do
   # Coverage reports
   gem 'simplecov', require: false
   gem 'coveralls', require: false
+
+  # JavaScript test runner
+  gem 'konacha'
 
   gem 'database_cleaner'
 end

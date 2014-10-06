@@ -1,4 +1,4 @@
-class TestStruct < OpenStruct
+class TestStruct
   attr_accessor :raw_hash
 
   delegate :[], to: :raw_hash

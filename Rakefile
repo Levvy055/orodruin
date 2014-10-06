@@ -6,4 +6,8 @@ require File.expand_path('../config/application', __FILE__)
 
 Rails.application.load_tasks
 
-task default: %i(test:all konacha:run spinach)
+require 'coveralls/rake/task'
+
+Coveralls::RakeTask.new
+
+task default: %i(test konacha:run spinach)
