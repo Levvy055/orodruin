@@ -15,4 +15,5 @@ notifications:
       - https://webhooks.gitter.im/e/a2a40dc92d4a0ebd1e2a
     on_success: change  # options: [always|never|change] default: always
     on_failure: always  # options: [always|never|change] default: always
-    on_start: false     # default: false
+git:
+  depth: 10
