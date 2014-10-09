@@ -126,7 +126,7 @@ group :test do
   gem 'minitest-extra-matchers'
   gem 'minitest-reporters'
   gem 'minitest-metadata', require: false
-  gem 'capybara_minitest_spec'
+  gem 'minitest-capybara'
 
   # Nicer mocking library
   gem 'rr', require: false
