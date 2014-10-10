@@ -47,10 +47,10 @@ class MarkupService
   end
 
   def gemojify(text)
-    index = Emoji::Index.new
+    @index ||= Emoji::Index.new
 
     text.gsub(/:(\w+):/) do |match|
-      if (emoji = index.find_by_name($1))
+      if (emoji = @index.find_by_name($1))
         emoji_tag(emoji)
       else
         match
