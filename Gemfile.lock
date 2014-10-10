@@ -126,8 +126,11 @@ GEM
       activemodel (>= 3.0)
       activesupport (>= 3.0)
       request_store (~> 1.0)
+    emoji (1.0.1)
+      json
     equalizer (0.0.9)
     erubis (2.7.0)
+    escape_utils (1.0.1)
     execjs (2.2.1)
     fabrication (2.11.3)
     faraday (0.9.0)
@@ -226,10 +229,14 @@ GEM
       capybara (~> 2.2)
       minitest (~> 5.0)
       rake
-    minitest-extra-matchers (0.0.6)
+    minitest-extra-matchers (0.0.12)
       minitest (>= 4.0)
+      nokogiri (>= 1.6)
     minitest-metadata (0.6.0)
       minitest (>= 4.7, < 6.0)
+    minitest-rails (2.1.0)
+      minitest (~> 5.4)
+      railties (~> 4.1)
     minitest-reporters (1.0.5)
       ansi
       builder
@@ -471,6 +478,8 @@ DEPENDENCIES
   decent_exposure
   devise (~> 3.4.0)
   draper (~> 1.4.0)
+  emoji
+  escape_utils
   fabrication
   ffaker
   foreman
@@ -490,6 +499,7 @@ DEPENDENCIES
   minitest-capybara
   minitest-extra-matchers
   minitest-metadata
+  minitest-rails
   minitest-reporters
   omniauth
   omniauth-facebook

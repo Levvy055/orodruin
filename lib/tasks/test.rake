@@ -1,3 +1,12 @@
 namespace :test do
-  task ci: %i(test konacha:run spinach coveralls:push)
+  desc 'Test Services'
+  Rake::TestTask.new(:services) do |t|
+    t.libs << 'test'
+    t.pattern = 'test/services/**/*_test.rb'
+  end
+
+  desc 'Travis-CI task'
+  task ci: %i(test:all konacha:run spinach coveralls:push)
 end
+
+Rake::Task[:test].enhance { Rake::Task['test:services'].invoke }

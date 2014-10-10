@@ -65,6 +65,9 @@ gem 'simple_form', '~> 3.0.1'
 
 # Lightweight markup language for blog posts (Markdown in this case)
 gem 'redcarpet', '~> 3.1.1'
+gem 'emoji'
+
+gem 'escape_utils'
 
 # Allow social translations
 gem 'localeapp'
@@ -123,6 +126,7 @@ end
 
 group :test do
   # Use MiniTest::Spec instead of MiniTest::Unit
+  gem 'minitest-rails'
   gem 'minitest-extra-matchers'
   gem 'minitest-reporters'
   gem 'minitest-metadata', require: false

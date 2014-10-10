@@ -22,7 +22,7 @@ module Orodruin
     # config.i18n.default_locale = :pl
 
     config.generators do |g|
-      g.test_framework      :test_unit, fixture_replacement: :fabrication
+      g.test_framework      :minitest, fixture_replacement: :fabrication, spec: true
       g.fixture_replacement :fabrication, dir: 'test/fabricators'
 
       g.helper              false

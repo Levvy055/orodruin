@@ -24,6 +24,7 @@ class MiniTest::Spec
   include Minitest::Extra::Matchers::Subject
   include Minitest::Extra::Matchers::Received
   include Minitest::Extra::Matchers::Pending
+  include Minitest::Extra::Matchers::DOM
 
   before :each do
     DatabaseCleaner.start

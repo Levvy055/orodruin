@@ -8,8 +8,8 @@ class Blog::Post < ActiveRecord::Base
   attr_writer :text
 
   def parse_text
-    parser = MarkupService.new
+    parser = MarkupService.new(text_raw)
 
-    self[:text] = parser.call(text_raw)
+    self[:text] = parser.call
   end
 end
