@@ -21,4 +21,8 @@ describe EmojisHelper do
     assert_attr_equal '20', subject, 'width'
     assert_attr_equal '20', subject, 'height'
   end
+
+  it 'has fallback to UTF-8 emoji' do
+    assert_attr_equal emoji['moji'], subject, 'alt'
+  end
 end

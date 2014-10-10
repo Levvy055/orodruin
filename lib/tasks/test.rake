@@ -9,4 +9,4 @@ namespace :test do
   task ci: %i(test:all konacha:run spinach)
 end
 
-Rake::Task['test:run'].enhance ['test:services']
+Rake::Task['test'].enhance ['test:services']

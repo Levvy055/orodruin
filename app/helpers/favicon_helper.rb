@@ -1,36 +1,29 @@
 module FaviconHelper
-  def apple_touch_favicon(size: nil,
-                          base: 'apple-touch-icon',
-                          extension: 'png')
+  def favicon(size: nil,
+              base: 'favicon',
+              rel: 'icon',
+              extension: 'png')
     size &&= "#{size}x#{size}"
     basename = [base, size].compact.join('-')
 
     tag(:link,
-        rel: 'apple-touch-icon',
-        sizes: size,
-        href: "/#{basename}.#{extension}")
-  end
-
-  def favicon(size: nil,
-              base: 'favicon',
-              extension: 'png')
-    size &&= "#{size}x#{size}"
-    basename = [base, sizes].compact.join('-')
-
-    tag(:link,
-        rel: 'icon',
+        rel: rel,
         type: 'image/png',
         sizes: size,
         href: "/#{basename}.#{extension}")
   end
 
-  def apple_touch_favicons(sizes:, base: 'apple-touch-icon')
-    icons = sizes.map { |size| apple_touch_favicon(size: size, base: base) }
+  def apple_touch_icons(sizes:)
+    icons = sizes.map do |size|
+      favicon(size: size,
+              rel: 'apple-touch-icon',
+              base: 'apple-touch-icon')
+    end
     icons.join('').html_safe
   end
 
-  def favicons(sizes:, base: 'favicon')
-    icons = sizes.map { |size| favicon(size: size, base: base) }
+  def favicons(sizes:)
+    icons = sizes.map { |size| favicon(size: size) }
     icons.join('').html_safe
   end
 
