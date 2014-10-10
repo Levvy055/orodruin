@@ -8,13 +8,18 @@ require 'minitest/spec'
 
 # Nicer output
 require 'minitest/reporters'
-MiniTest::Reporters.use!(MiniTest::Reporters::SpecReporter.new) unless ENV['CI']
+Minitest::Reporters.use!(
+  Minitest::Reporters::SpecReporter.new,
+  ENV,
+  Minitest.backtrace_filter) unless ENV['CI']
 
 # RR mocking library
 require 'rr'
 
 # Extra matchers
 require 'minitest/extra/matchers'
+
+require 'minitest/metadata'
 
 DatabaseCleaner.strategy = :transaction
 
