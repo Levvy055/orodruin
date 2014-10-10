@@ -1,5 +1,12 @@
 # vi: ft=ruby
 
+require 'coveralls'
+
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
+  SimpleCov::Formatter::HTMLFormatter,
+  Coveralls::SimpleCov::Formatter
+]
+
 SimpleCov.use_merging true
 SimpleCov.start 'rails' do
   add_filter '/test/'
