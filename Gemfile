@@ -64,7 +64,7 @@ gem 'slim-rails'
 gem 'simple_form', '~> 3.0.1'
 
 # Lightweight markup language for blog posts (Markdown in this case)
-gem 'redcarpet', '~> 3.1.1'
+gem 'redcarpet', '~> 3.2.0'
 gem 'emoji'
 
 gem 'escape_utils'
