@@ -71,7 +71,7 @@ gem 'escape_utils'
 
 # Allow social translations
 gem 'localeapp'
-gem 'rails-i18n', '~> 4.0.0'
+gem 'r18n-rails'
 
 # Track emails
 gem 'mandriller'
