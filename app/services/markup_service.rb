@@ -23,8 +23,8 @@ require 'filters/markdown_filter'
 #     parser.call('Lorem ipsum') #=> '<p>Lorem ipsum</p>'
 class MarkupService
   PIPELINE = Pipeline.new [
-    MarkdownFilter.new,
-    EmojiFilter.new
+    EmojiFilter.new,
+    MarkdownFilter.new
   ]
 
   def initialize(content)

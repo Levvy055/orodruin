@@ -60,9 +60,6 @@ gem 'draper', '~> 1.4.0'
 # Nicer views template engine
 gem 'slim-rails'
 
-# Model versioning
-gem 'paper_trail'
-
 # From helpers
 gem 'simple_form', '~> 3.0.1'
 
@@ -83,6 +80,7 @@ gem 'ahoy_email'
 
 # Inline email CSS
 gem 'roadie', '~> 3.0.1'
+gem 'roadie-rails'
 
 # Better logging
 gem 'lograge'
