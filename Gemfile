@@ -60,6 +60,9 @@ gem 'draper', '~> 1.4.0'
 # Nicer views template engine
 gem 'slim-rails'
 
+# Model versioning
+gem 'paper_trail'
+
 # From helpers
 gem 'simple_form', '~> 3.0.1'
 
@@ -67,14 +70,22 @@ gem 'simple_form', '~> 3.0.1'
 gem 'redcarpet', '~> 3.2.0'
 gem 'emoji'
 
+# Faster HTML escaping
 gem 'escape_utils'
 
 # Allow social translations
 gem 'localeapp'
 gem 'r18n-rails'
 
-# Track emails
-gem 'mandriller'
+# Tracking
+gem 'ahoy_matey'
+gem 'ahoy_email'
+
+# Inline email CSS
+gem 'roadie', '~> 3.0.1'
+
+# Better logging
+gem 'lograge'
 
 group :doc do
   gem 'yard', require: false
