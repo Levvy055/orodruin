@@ -34,7 +34,7 @@ The best way to install Ruby is using [rbenv][rbenv].
 
 1. Clone this repo using
 
-        git clone https://github.com/hauleth/orodruin.git
+        git clone https://github.com/eriador/orodruin.git
 
 2. Install all dependencies
 
@@ -54,17 +54,17 @@ The best way to install Ruby is using [rbenv][rbenv].
 ## Badges
 
 * project build
-  [![Build Status](https://travis-ci.org/hauleth/orodruin.svg?branch=master)](https://travis-ci.org/hauleth/orodruin)
-  [![Code Climate](https://codeclimate.com/github/hauleth/orodruin.png)](https://codeclimate.com/github/hauleth/orodruin)
-  [![Coverage Status](https://coveralls.io/repos/hauleth/orodruin/badge.png)](https://coveralls.io/r/hauleth/orodruin)
+  [![Build Status](https://travis-ci.org/eriador/orodruin.svg?branch=master)](https://travis-ci.org/eriador/orodruin)
+  [![Code Climate](https://codeclimate.com/github/eriador/orodruin.png)](https://codeclimate.com/github/eriador/orodruin)
+  [![Coverage Status](https://coveralls.io/repos/eriador/orodruin/badge.png)](https://coveralls.io/r/eriador/orodruin)
 * documentation
-  [![Inline docs](http://inch-ci.org/github/hauleth/orodruin.png)](http://inch-ci.org/github/hauleth/orodruin)
+  [![Inline docs](http://inch-ci.org/github/eriador/orodruin.png)](http://inch-ci.org/github/eriador/orodruin)
 * deps/security
-  [![Dependency Status](https://gemnasium.com/hauleth/orodruin.svg)](https://gemnasium.com/hauleth/orodruin)
-  [![Security](https://hakiri.io/github/hauleth/orodruin/master.svg)](https://hakiri.io/github/hauleth/orodruin/master)
+  [![Dependency Status](https://gemnasium.com/eriador/orodruin.svg)](https://gemnasium.com/eriador/orodruin)
+  [![Security](https://hakiri.io/github/eriador/orodruin/master.svg)](https://hakiri.io/github/eriador/orodruin/master)
 * design/progress
-  [![Stories in Ready](https://badge.waffle.io/hauleth/orodruin.png?label=ready)](https://waffle.io/hauleth/orodruin)
-  [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/hauleth/orodruin?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+  [![Stories in Ready](https://badge.waffle.io/eriador/orodruin.png?label=ready)](https://waffle.io/eriador/orodruin)
+  [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/eriador/orodruin?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 ## Contribution
 

@@ -85,6 +85,8 @@ gem 'roadie-rails'
 # Better logging
 gem 'lograge'
 
+gem 'audited'
+
 group :doc do
   gem 'yard', require: false
   gem 'yard-tomdoc', require: false
