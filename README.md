@@ -29,6 +29,7 @@ You will need:
 - [Bower][bower]
 - Ruby 2.1.2
 - Bundler
+- [Redis]
 
 The best way to install Ruby is using [rbenv][rbenv].
 
@@ -45,7 +46,11 @@ The best way to install Ruby is using [rbenv][rbenv].
 
         ./bin/rake test
 
-4. Run server
+4. Run redis server (in redis directory)
+        
+        src/redis-server
+
+5. Run server
 
         ./bin/foreman start
 
@@ -87,3 +92,4 @@ Before anything read `CONTRIBUTION.md`.
 [Pyrkon]: http://www.pyrkon.pl/ "Pyrkon - Poznań's Fantasy Convention'"
 [bower]: http://bower.io/ "Bower package manager"
 [rbenv]: https://github.com/sstephenson/rbenv "Ruby version manager"
+[Redis]: http://redis.io/download "Redis"
