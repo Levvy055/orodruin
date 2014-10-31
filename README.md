@@ -48,7 +48,7 @@ The best way to install Ruby is using [rbenv][rbenv].
 
 4. Run redis server (in redis directory)
         
-        /src/redis-server
+        src/redis-server
 
 5. Run server
 
