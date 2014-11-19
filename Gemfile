@@ -114,10 +114,7 @@ group :development do
   gem 'quiet_assets'
 
   # Automate things
-  gem 'guard'
-  gem 'guard-bower'
-  gem 'guard-brakeman'
-  gem 'guard-bundler'
+  gem 'guard', '~> 2.8.2'
   gem 'guard-minitest'
   gem 'guard-konacha'
 end
