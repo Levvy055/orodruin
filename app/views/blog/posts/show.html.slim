@@ -1,7 +1,0 @@
-h1= post.title
-.author
-  = post.author.nickname
-== post.text
-
-= link_to 'Edit', edit_blog_post_path(post) if can? :edit, post
-= link_to 'Delete', post, method: :delete if can? :delete, post

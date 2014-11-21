@@ -1,36 +1,9 @@
 class Blog::PostsController < ApplicationController
-  expose(:posts, model: Blog::Post)
-  expose(:post, model: Blog::Post, attributes: :post_params)
-
-  def create
-    post.user = current_user
-
-    if post.save
-      redirect_to post
-    else
-      render :new
-    end
+  def index
+    @posts = Blog::Post.all.includes(:author)
   end
 
-  def update
-    if post.save
-      redirect_to post
-    else
-      render :edit
-    end
-  end
-
-  def destroy
-    if post.delete
-      redirect_to blog_posts_path
-    else
-      redirect_to post
-    end
-  end
-
-  protected
-
-  def post_params
-    params.require(:blog_post).permit(:title, :content_raw)
+  def show
+    @post = Blog::Post.find(params[:id])
   end
 end

@@ -1,0 +1,5 @@
+<article class="blog post">
+  <h1>{{title}}</h1>
+  <div class="author">{{author_name}}</div>
+  <div class="body">{{text}}</div>
+</article>
