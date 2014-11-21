@@ -51,14 +51,12 @@ gem 'omniauth-twitter'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-vkontakte'
 
-# Simplify controllers by decent_exposure
-gem 'decent_exposure'
-
 # Simplify views using decorators
 gem 'draper', '~> 1.4.0'
 
 # Nicer views template engine
-gem 'slim-rails'
+gem 'slim-rails', '~> 2.1.5'
+gem 'curly-templates', '~> 2.1.1'
 
 # From helpers
 gem 'simple_form', '~> 3.0.1'

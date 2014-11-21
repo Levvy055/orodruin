@@ -123,10 +123,11 @@ GEM
       thor
     css_parser (1.3.5)
       addressable
+    curly-templates (2.1.1)
+      actionpack (>= 3.1, < 4.2)
     database_cleaner (1.3.0)
     debug_inspector (0.0.2)
     debugger-linecache (1.2.0)
-    decent_exposure (2.3.2)
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
     devise (3.4.1)
@@ -503,8 +504,8 @@ DEPENDENCIES
   cancancan (~> 1.9.0)
   carrierwave
   coveralls
+  curly-templates (~> 2.1.1)
   database_cleaner
-  decent_exposure
   devise (~> 3.4.0)
   draper (~> 1.4.0)
   emoji
@@ -550,7 +551,7 @@ DEPENDENCIES
   sidekiq
   simple_form (~> 3.0.1)
   simplecov
-  slim-rails
+  slim-rails (~> 2.1.5)
   spinach-rails
   spring
   turbolinks

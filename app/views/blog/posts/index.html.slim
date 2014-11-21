@@ -1,7 +1,0 @@
-- posts.each do |post|
-  article.blog.post
-    h1= link_to post.title, post
-    .content
-      == post.text
-
-= link_to 'New post', new_blog_post_path, class: 'btn' if can? :create, Blog::Post

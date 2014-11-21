@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Orodruin</title>
+    {{stylesheets}}
+    {{csrf}}
+    {{icons}}
+  </head>
+  <body>
+    {{navigation}}
+    <div class="content-fluid">
+      {{body}}
+    </div>
+    {{javascripts}}
+  </body>
+</html>
