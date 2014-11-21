@@ -26,14 +26,8 @@ creating pull-request, read this.
 ### JavaScript Developer
 
 - Use [JavaScript Style Guide][airbnb].
-- If any dependency needed, prefer using [Bower][bower] than Bundler. Bower has
-  greater JS libraries database and is much cleaner.
-- Style can be checked using `gulp syntax-check`.
-- Do not edit `gulpfile.js` directly. All assets are compiled using Sprockets
-  so Gulp tasks won't be run on production. If something needed write an
-  [issue][issues].
-- Do not use RequireJS or similar. We have Sprockets with it's `require`
-  and `require_tree`.
+- We use [`browserify-rails`][browserify-rails] gem so you can use both `require()`
+  and Sprockets `// require`.
 
 Testing library linked. You can suggest one or wait till we choose one.
 
@@ -42,16 +36,15 @@ Testing library linked. You can suggest one or wait till we choose one.
 - We use [Sass][sass] across whole project. Please, keep that (no SCSS).
 - Use [Idiomatic CSS Style Guide][idiomatic].
 - Document your styles using [KSS][kss].
-- Install dependencies using Bower.
 
 All design papers (available for comment) are stored on [Google Drive][gdrive].
 Feel free to participate.
 
 [airbnb]: https://github.com/airbnb/javascript "Airbnb JavaScript Style Guide"
 [bbatsov]: https://github.com/bbatsov/ruby-style-guide "A community-driven Ruby coding style guide"
-[bower]: http://bower.io/
 [idiomatic]: https://github.com/necolas/idiomatic-css "Idiomatic CSS"
 [issues]: https://github.com/hauleth/orodruin/issues/new "Report issue"
 [kss]: http://warpspire.com/kss/ "Knyle Style Sheets"
 [sass]: http://sass-lang.com/ "Syntactically Awesome Style Sheets"
 [gdrive]: https://drive.google.com/folderview?id=0B0qkbxb2OVObVzJWdXlKUTZuZms&usp=sharing "Design files"
+[browserify-rails]: https://github.com/browserify-rails/browserify-rails

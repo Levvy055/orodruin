@@ -60,6 +60,8 @@ GEM
       parser (>= 2.2.0.pre.3, < 3.0)
     audited (4.0.0)
       rails-observers (~> 0.1.2)
+    autoprefixer-rails (4.0.0.1)
+      execjs
     axiom-types (0.1.1)
       descendants_tracker (~> 0.0.4)
       ice_nine (~> 0.11.0)
@@ -81,6 +83,8 @@ GEM
       slim (>= 1.3.6, < 3.0)
       terminal-table (~> 1.4)
     browser (0.7.2)
+    browserify-rails (0.5.1)
+      sprockets (~> 2.0)
     builder (3.2.2)
     bullet (4.14.0)
       activesupport (>= 3.0.0)
@@ -502,8 +506,10 @@ DEPENDENCIES
   ahoy_matey
   annotate (~> 2.6.5)
   audited
+  autoprefixer-rails
   bootstrap-sass
   brakeman
+  browserify-rails
   bullet
   cancancan (~> 1.9.0)
   carrierwave

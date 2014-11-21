@@ -5,9 +5,13 @@ gem 'rails', '4.2.0.beta4'
 
 gem 'pg'
 
+# Use Browserify
+gem 'browserify-rails'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0.0.beta1'
 gem 'bootstrap-sass'
+gem 'autoprefixer-rails'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

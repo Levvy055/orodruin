@@ -21,6 +21,8 @@ module Orodruin
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
     # config.i18n.default_locale = :pl
 
+    config.browserify_rails.commandline_options = ['-t 6to5-browserify']
+
     config.generators do |g|
       g.test_framework      :minitest, fixture_replacement: :fabrication, spec: true
       g.fixture_replacement :fabrication, dir: 'test/fabricators'
