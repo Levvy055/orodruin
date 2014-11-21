@@ -1,3 +1,26 @@
+# ## Schema Information
+#
+# Table name: `auth_providers`
+#
+# ### Columns
+#
+# Name              | Type               | Attributes
+# ----------------- | ------------------ | ---------------------------
+# **`id`**          | `integer`          | `not null, primary key`
+# **`user_id`**     | `integer`          |
+# **`type`**        | `string(255)`      |
+# **`created_at`**  | `datetime`         |
+# **`updated_at`**  | `datetime`         |
+# **`uid`**         | `string(255)`      |
+#
+# ### Indexes
+#
+# * `index_auth_providers_on_type`:
+#     * **`type`**
+# * `index_auth_providers_on_user_id`:
+#     * **`user_id`**
+#
+
 # Internal: OAuth service provider
 #
 # This class SHOULD NOT be used directly. If you want to add new provider

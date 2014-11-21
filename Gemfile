@@ -64,7 +64,7 @@ gem 'slim-rails'
 gem 'simple_form', '~> 3.0.1'
 
 # Lightweight markup language for blog posts (Markdown in this case)
-gem 'redcarpet', '~> 3.2.0'
+gem 'redcarpet', '~> 3.1.0'
 gem 'emoji'
 
 # Faster HTML escaping
@@ -109,6 +109,9 @@ group :development do
 
   # Preview application flow in Chrome
   gem 'meta_request'
+
+  # Create model annotations
+  gem 'annotate', '~> 2.6.5'
 
   # STFU
   gem 'quiet_assets'

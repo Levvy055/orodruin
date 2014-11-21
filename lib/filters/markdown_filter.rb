@@ -4,9 +4,14 @@ class MarkdownFilter
   def initialize(renderer: {}, parser: {})
     @render_opts = renderer.reverse_merge(no_styles: true,
                                           safe_link_only: true,
-                                          with_toc_data: true)
+                                          with_toc_data: true,
+                                          no_styles: true)
     @parse_opts = parser.reverse_merge(autolink: true,
-                                       quote: true)
+                                       quote: true,
+                                       tables: true,
+                                       underline: true,
+                                       highlight: true,
+                                       footnotes: true)
   end
 
   def parse(text)
@@ -16,10 +21,10 @@ class MarkdownFilter
   private
 
   def renderer
-    Redcarpet::Render::HTML.new(@render_opts)
+    @render ||= Redcarpet::Render::HTML.new(@render_opts)
   end
 
   def parser
-    Redcarpet::Markdown.new(renderer, @parse_opts)
+    @parser ||= Redcarpet::Markdown.new(renderer, @parse_opts)
   end
 end

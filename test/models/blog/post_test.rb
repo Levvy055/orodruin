@@ -1,3 +1,25 @@
+# ## Schema Information
+#
+# Table name: `blog_posts`
+#
+# ### Columns
+#
+# Name              | Type               | Attributes
+# ----------------- | ------------------ | ---------------------------
+# **`id`**          | `integer`          | `not null, primary key`
+# **`text_raw`**    | `text`             |
+# **`text`**        | `text`             |
+# **`title`**       | `string(255)`      |
+# **`author_id`**   | `integer`          |
+# **`created_at`**  | `datetime`         |
+# **`updated_at`**  | `datetime`         |
+#
+# ### Indexes
+#
+# * `index_blog_posts_on_author_id`:
+#     * **`author_id`**
+#
+
 require 'test_helper'
 
 describe Blog::Post do
