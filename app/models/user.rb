@@ -63,4 +63,16 @@ class User < ActiveRecord::Base
 
   has_many :participations
   has_many :conventions, through: :participations
+
+  def self.find_by_nickname(nickname)
+    where('LOWER(nickname) = ?', nickname.downcase).first
+  end
+
+  # :nodoc:
+  class Entity < Grape::Entity
+    expose :first_name
+    expose :last_name
+    expose :nickname
+    expose :email
+  end
 end
