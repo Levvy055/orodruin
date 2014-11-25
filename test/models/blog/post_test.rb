@@ -1,23 +1,18 @@
-# ## Schema Information
+# == Schema Information
 #
-# Table name: `blog_posts`
+# Table name: blog_posts
 #
-# ### Columns
+#  id         :integer          not null, primary key
+#  text_raw   :text
+#  text       :text
+#  title      :string(255)
+#  author_id  :integer
+#  created_at :datetime
+#  updated_at :datetime
 #
-# Name              | Type               | Attributes
-# ----------------- | ------------------ | ---------------------------
-# **`id`**          | `integer`          | `not null, primary key`
-# **`text_raw`**    | `text`             |
-# **`text`**        | `text`             |
-# **`title`**       | `string(255)`      |
-# **`author_id`**   | `integer`          |
-# **`created_at`**  | `datetime`         |
-# **`updated_at`**  | `datetime`         |
+# Indexes
 #
-# ### Indexes
-#
-# * `index_blog_posts_on_author_id`:
-#     * **`author_id`**
+#  index_blog_posts_on_author_id  (author_id)
 #
 
 require 'test_helper'

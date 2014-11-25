@@ -1,6 +1,3 @@
-class Auth::Application < ActiveRecord::Base
-end
-
 # == Schema Information
 #
 # Table name: auth_applications
@@ -20,3 +17,13 @@ end
 #  index_auth_applications_on_uid             (uid)
 #  index_auth_applications_on_uid_and_secret  (uid,secret)
 #
+
+require 'test_helper'
+
+describe Auth::Application do
+  let(:application) { Auth::Application.new }
+
+  it 'must be valid' do
+    application.must_be :valid?
+  end
+end

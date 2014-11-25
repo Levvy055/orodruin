@@ -1,23 +1,17 @@
-# ## Schema Information
+# == Schema Information
 #
-# Table name: `participants`
+# Table name: participants
 #
-# ### Columns
+#  id            :integer          not null, primary key
+#  user_id       :integer
+#  convention_id :integer
+#  created_at    :datetime
+#  updated_at    :datetime
 #
-# Name                 | Type               | Attributes
-# -------------------- | ------------------ | ---------------------------
-# **`id`**             | `integer`          | `not null, primary key`
-# **`user_id`**        | `integer`          |
-# **`convention_id`**  | `integer`          |
-# **`created_at`**     | `datetime`         |
-# **`updated_at`**     | `datetime`         |
+# Indexes
 #
-# ### Indexes
-#
-# * `index_participants_on_convention_id`:
-#     * **`convention_id`**
-# * `index_participants_on_user_id`:
-#     * **`user_id`**
+#  index_participants_on_convention_id  (convention_id)
+#  index_participants_on_user_id        (user_id)
 #
 
 require 'test_helper'
