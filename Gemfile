@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.0.beta4'
+gem 'rails', '4.2.0.rc2'
 
 gem 'pg'
 
@@ -61,14 +61,13 @@ gem 'omniauth-vkontakte'
 gem 'draper', '~> 1.4.0'
 
 # Nicer views template engine
-gem 'slim-rails', '~> 2.1.5'
-gem 'curly-templates', '~> 2.1.1'
+gem 'curly-templates', '~> 2.2.0'
 
 # From helpers
-gem 'simple_form', '~> 3.0.1'
+gem 'simple_form', '~> 3.1.0'
 
 # Lightweight markup language for blog posts (Markdown in this case)
-gem 'redcarpet', '~> 3.1.0'
+gem 'redcarpet', '~> 3.2.0'
 gem 'emoji'
 
 # Faster HTML escaping
@@ -121,9 +120,8 @@ group :development do
   gem 'quiet_assets'
 
   # Automate things
-  gem 'guard', '~> 2.8.2'
+  gem 'guard', '~> 2.10.0'
   gem 'guard-minitest'
-  gem 'guard-konacha'
 end
 
 group :development, :test do

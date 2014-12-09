@@ -1,12 +1,16 @@
 class Layouts::ApplicationPresenter < Curly::Presenter
-  def stylesheets
-    stylesheet_link_tag('application',
-                        media: 'all',
+  def title
+    ['Orodruin', yield(:title)].compact.join(' | ')
+  end
+
+  def stylesheets(file: 'application', media: 'all')
+    stylesheet_link_tag(file,
+                        media: media,
                         'data-turbolinks-track' => true)
   end
 
-  def javascripts
-    javascript_include_tag('application',
+  def javascripts(file: 'application')
+    javascript_include_tag(file,
                            'data-turbolinks-track' => true)
   end
 
@@ -16,10 +20,6 @@ class Layouts::ApplicationPresenter < Curly::Presenter
 
   def body
     yield
-  end
-
-  def navigation
-    render 'components/navigation'
   end
 
   def icons
