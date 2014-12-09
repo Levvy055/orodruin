@@ -1,5 +1,5 @@
-//= require nprogress
-// jshint strict:false, undef:false
+import * as NProgress from 'nprogress';
+import * as $ from 'jquery';
 
 NProgress.configure({ showSpinner: false });
 
