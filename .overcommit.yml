@@ -17,6 +17,11 @@
 
 PreCommit:
   Reek:
+    exclude:
+      - 'app/controllers/**/*.rb'
+      - 'app/decorators/**/*.rb'
+      - 'app/mailers/**/*.rb'
+      - 'app/presenters/**/*.rb'
     include:
       - 'app/models/**/*.rb'
 
