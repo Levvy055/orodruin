@@ -5,8 +5,10 @@
   "devDependencies": {
     "6to5-browserify": "*",
     "browserify": "^6.3.2",
+    "immutable": "^3.2.1",
     "jquery": "^2.1.1",
     "jquery-ujs": "*",
-    "nprogress": "^0.1.6"
+    "nprogress": "^0.1.6",
+    "react": "^0.12.1"
   }
 }
