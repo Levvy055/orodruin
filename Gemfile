@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.0.rc2'
+gem 'rails', '4.2.0.rc3'
 
 gem 'pg'
 
@@ -17,7 +17,7 @@ gem 'autoprefixer-rails'
 gem 'uglifier', '>= 1.3.0'
 
 # API builder
-gem 'grape', '~> 0.9.0'
+gem 'grape', '~> 0.10.0'
 # Build JSON APIs with ease.
 gem 'grape-entity'
 # Documentation
