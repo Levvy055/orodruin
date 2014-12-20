@@ -3,8 +3,8 @@
 # Table name: participants
 #
 #  id            :integer          not null, primary key
-#  user_id       :integer
-#  convention_id :integer
+#  user_id       :integer          indexed
+#  convention_id :integer          indexed
 #  created_at    :datetime
 #  updated_at    :datetime
 #

@@ -7,8 +7,8 @@ end
 # Table name: auth_providers
 #
 #  id         :integer          not null, primary key
-#  user_id    :integer
-#  type       :string(255)
+#  user_id    :integer          indexed
+#  type       :string(255)      indexed
 #  created_at :datetime
 #  updated_at :datetime
 #  uid        :string(255)

@@ -6,7 +6,7 @@
 #  text_raw   :text
 #  text       :text
 #  title      :string(255)
-#  author_id  :integer
+#  author_id  :integer          indexed
 #  created_at :datetime
 #  updated_at :datetime
 #

@@ -11,7 +11,7 @@ if Rails.env.development?
       'position_in_test'     => 'before',
       'position_in_factory'  => 'before',
       'show_indexes'         => 'true',
-      'simple_indexes'       => 'false',
+      'simple_indexes'       => 'true',
       'model_dir'            => 'app/models',
       'include_version'      => 'false',
       'require'              => '',

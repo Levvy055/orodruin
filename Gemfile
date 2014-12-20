@@ -63,9 +63,6 @@ gem 'draper', '~> 1.4.0'
 # Nicer views template engine
 gem 'curly-templates', '~> 2.2.0'
 
-# From helpers
-gem 'simple_form', '~> 3.1.0'
-
 # Lightweight markup language for blog posts (Markdown in this case)
 gem 'redcarpet', '~> 3.2.0'
 gem 'emoji'

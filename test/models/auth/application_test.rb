@@ -4,10 +4,10 @@
 #
 #  id           :integer          not null, primary key
 #  name         :string           not null
-#  uid          :uuid             not null
-#  secret       :string           not null
+#  uid          :uuid             not null, indexed, indexed => [secret]
+#  secret       :string           not null, indexed => [uid]
 #  redirect_uri :string           not null
-#  owner_id     :integer
+#  owner_id     :integer          indexed
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #
