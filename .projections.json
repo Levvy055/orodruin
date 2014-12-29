@@ -1,0 +1,4 @@
+{
+  "app/presenters/*.rb": { "alternate": "app/views/{}.html.curl" },
+  "app/views/*.html.curl": { "alternate": "app/presenters/{}.rb" }
+}

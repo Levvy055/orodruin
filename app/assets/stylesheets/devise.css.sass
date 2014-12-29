@@ -1,0 +1,47 @@
+=switch($switch-color, $color-on: #2ecc71, $color-off: #e74c3c, $animation-length: .4s)
+  label
+    +user-select(none)
+    font-weight: bold
+    position: relative
+  input[type=checkbox]
+    display: none
+    & + label
+      margin: 0
+      padding: 0 0 0 3.5em
+      &::before, &::after
+        content: ''
+        display: block
+        position: absolute
+        left: 0
+        top: -.25em
+      &::before
+        width: 3em
+        height: 2em
+        background-color: $color-off
+        border-radius: 1em
+        transition: background $animation-length
+      &::after
+        box-sizing: border-box
+        font-weight: 100
+        width: 1.5em
+        height: 1.5em
+        color: lighten($switch-color, 30%)
+        background-color: $switch-color
+        border-radius: 50%
+        top: 0
+        left: .25em
+        transition: left $animation-length
+    &:checked + label
+      &::after
+        left: 1.25em
+      &::before
+        background-color: $color-on
+
+.devise
+  &.sessions
+    background-color: #2c3e50
+    text-align: center
+
+  .switch
+    padding: .5em
+    +switch(#2c3e50)

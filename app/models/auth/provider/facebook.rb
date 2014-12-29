@@ -3,8 +3,7 @@ class Auth::Provider::Facebook < Auth::Provider
   def create_user_from(auth)
     user_info = auth.info
 
-    create_user(email: user_info.email,
-                first_name: user_info.first_name,
+    create_user(first_name: user_info.first_name,
                 last_name: user_info.last_name,
                 nickname: user_info.nickname,
                 password: Devise.friendly_token[0, 20],

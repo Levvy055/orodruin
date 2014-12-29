@@ -7,11 +7,12 @@ require 'rails/test_help'
 require 'minitest/spec'
 
 # Nicer output
-require 'minitest/reporters'
-Minitest::Reporters.use!(
-  Minitest::Reporters::SpecReporter.new,
-  ENV,
-  Minitest.backtrace_filter) unless ENV['CI']
+unless ENV['CI']
+  require 'minitest/reporters'
+  Minitest::Reporters.use!(Minitest::Reporters::SpecReporter.new,
+                           ENV,
+                           Minitest.backtrace_filter)
+end
 
 # RR mocking library
 require 'rr'

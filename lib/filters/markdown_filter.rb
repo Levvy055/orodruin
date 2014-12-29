@@ -2,8 +2,7 @@ class MarkdownFilter
   attr_accessor :options
 
   def initialize(renderer: {}, parser: {})
-    @render_opts = renderer.reverse_merge(no_styles: true,
-                                          safe_link_only: true,
+    @render_opts = renderer.reverse_merge(safe_link_only: true,
                                           with_toc_data: true,
                                           no_styles: true)
     @parse_opts = parser.reverse_merge(autolink: true,

@@ -18,15 +18,19 @@ class Layouts::ApplicationPresenter < Curly::Presenter
     csrf_meta_tags
   end
 
-  def body
-    yield
-  end
-
   def icons
     [
       apple_touch_icons(sizes: [57, 72, 60, 76, 114, 120, 144, 152]),
       favicons(sizes: [16, 32, 96, 160, 196]),
       windows_tile(color: '#da532c', image: '/mstile-144x144.png')
     ].join('').html_safe
+  end
+
+  def body_class
+    params[:controller].tr('/', ' ')
+  end
+
+  def body
+    yield
   end
 end

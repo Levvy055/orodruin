@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <title>{{title}}</title>
+    <title>{{title}}</title>
     {{csrf}}
 
     {{stylesheets}}
@@ -9,7 +9,7 @@
 
     {{icons}}
   </head>
-  <body>
+  <body class="{{body_class}}">
     <div class="content-fluid">
       {{body}}
     </div>
