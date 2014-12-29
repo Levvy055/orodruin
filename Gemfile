@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.0.rc3'
+gem 'rails', '4.2.0'
 
 gem 'pg'
 
@@ -9,7 +9,7 @@ gem 'pg'
 gem 'browserify-rails'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0.0.beta1'
+gem 'sass-rails', '~> 5.0.0'
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 
@@ -61,7 +61,7 @@ gem 'omniauth-vkontakte'
 gem 'draper', '~> 1.4.0'
 
 # Nicer views template engine
-gem 'curly-templates', '~> 2.2.0'
+gem 'curly-templates', '~> 2.3'
 
 # Lightweight markup language for blog posts (Markdown in this case)
 gem 'redcarpet', '~> 3.2.0'
@@ -87,13 +87,15 @@ gem 'lograge'
 
 gem 'audited'
 
+gem 'skylight'
+
 group :doc do
   gem 'yard', require: false
   gem 'yard-tomdoc', require: false
 end
 
 group :development do
-  gem 'web-console', '~> 2.0.beta4'
+  gem 'web-console', '~> 2.0'
 
   # Process management
   gem 'foreman', require: false
