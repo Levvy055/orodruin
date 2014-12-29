@@ -1,0 +1,68 @@
+=switch($switch-color, $color-on: #2ecc71, $color-off: #e74c3c, $animation-length: .4s)
+  label
+    font-weight: bold
+
+
+
+    position: relative
+
+
+
+    user-select: none
+  input[type=checkbox]
+    display: none
+    & + label
+      margin: 0
+      padding: 0 0 0 3.5em
+      &::before, &::after
+
+
+        content: ''
+
+        position: absolute
+        top: -.25em
+        left: 0
+
+
+
+        display: block
+      &::before
+        width: 3em
+        height: 2em
+
+
+
+        transition: background $animation-length
+
+
+
+        border-radius: 1em
+        background-color: $color-off
+      &::after
+        font-weight: 100
+
+
+
+        top: 0
+        left: .25em
+
+
+
+        box-sizing: border-box
+        width: 1.5em
+        height: 1.5em
+
+
+
+        transition: left $animation-length
+
+
+
+        color: lighten($switch-color, 30%)
+        border-radius: 50%
+        background-color: $switch-color
+      &:checked + label
+        &::after
+          left: 1.25em
+        &::before
+          background-color: $color-on
