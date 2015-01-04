@@ -3,7 +3,7 @@
 # Table name: conventions
 #
 #  id         :integer          not null, primary key
-#  name       :string(255)
+#  name       :string
 #  start      :date
 #  finish     :date
 #  created_at :datetime

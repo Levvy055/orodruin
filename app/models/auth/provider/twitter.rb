@@ -8,10 +8,10 @@ end
 #
 #  id         :integer          not null, primary key
 #  user_id    :integer          indexed
-#  type       :string(255)      indexed
+#  type       :string           indexed
 #  created_at :datetime
 #  updated_at :datetime
-#  uid        :string(255)
+#  uid        :string
 #
 # Indexes
 #

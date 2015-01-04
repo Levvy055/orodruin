@@ -84,6 +84,7 @@ gem 'roadie-rails'
 
 # Better logging
 gem 'lograge'
+gem 'logstash-logger'
 
 gem 'audited'
 

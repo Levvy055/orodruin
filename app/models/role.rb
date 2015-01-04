@@ -20,9 +20,9 @@ end
 # Table name: roles
 #
 #  id            :integer          not null, primary key
-#  name          :string(255)      indexed, indexed => [resource_type, resource_id]
+#  name          :string           indexed, indexed => [resource_type, resource_id]
 #  resource_id   :integer          indexed => [name, resource_type]
-#  resource_type :string(255)      indexed => [name, resource_id]
+#  resource_type :string           indexed => [name, resource_id]
 #  created_at    :datetime
 #  updated_at    :datetime
 #

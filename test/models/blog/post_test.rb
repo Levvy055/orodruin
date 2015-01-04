@@ -5,7 +5,7 @@
 #  id         :integer          not null, primary key
 #  text_raw   :text
 #  text       :text
-#  title      :string(255)
+#  title      :string
 #  author_id  :integer          indexed
 #  created_at :datetime
 #  updated_at :datetime
