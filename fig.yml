@@ -1,0 +1,33 @@
+app:
+  build: .
+  command: unicorn -c config/unicorn.rb -p 5000
+  volumes:
+    - .:/app
+  links:
+    - db
+    - redis
+  ports:
+    - 5000:5000
+  environment:
+    SERVICE_NAME: app
+
+worker:
+  build: .
+  command: sidekiq -C config/sidekiq.yml
+  volumes:
+    - .:/app
+  links:
+    - db
+    - redis
+  environment:
+    SERVICE_NAME: worker
+
+db:
+  image: postgres
+  environment:
+    SERVICE_NAME: postgres
+
+redis:
+  image: redis
+  environment:
+    SERVICE_NAME: redis

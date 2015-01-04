@@ -42,6 +42,13 @@ Rails.application.configure do
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
 
+  if ENV['LOGGER_URI']
+    uri = URI.parse(ENV['LOGGER_URI'])
+    logger = ActiveSupport::Logger.new(TCPSocket.new(uri.host, uri.port))
+    config.logger = ActiveSupport::TaggedLogging.new(logger)
+  end
+  config.lograge.formatter = Lograge::Formatters::Json.new
+
   # Set to :debug to see everything in the log.
   config.log_level = :info
 
