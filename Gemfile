@@ -17,7 +17,7 @@ gem 'autoprefixer-rails'
 gem 'uglifier', '>= 1.3.0'
 
 # API builder
-gem 'grape', '~> 0.10.0'
+gem 'grape', '~> 0.11.0'
 # Build JSON APIs with ease.
 gem 'grape-entity'
 # Documentation
@@ -47,8 +47,8 @@ gem 'mini_magick'
 
 # User management
 gem 'devise', '~> 3.4.0'
-gem 'cancancan', '~> 1.9.0'
-gem 'rolify', '~> 3.4.0'
+gem 'cancancan', '~> 1.10.0'
+gem 'rolify', '~> 4.0.0'
 
 # OAuth sign up
 gem 'omniauth'
@@ -120,7 +120,7 @@ group :development do
   gem 'quiet_assets'
 
   # Automate things
-  gem 'guard', '~> 2.10.0'
+  gem 'guard', '~> 2.12.0'
   gem 'guard-minitest'
 end
 
