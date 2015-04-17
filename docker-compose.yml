@@ -23,11 +23,11 @@ worker:
     SERVICE_NAME: worker
 
 db:
-  image: postgres
+  image: postgres:9.4
   environment:
     SERVICE_NAME: postgres
 
 redis:
-  image: redis
+  image: redis:2
   environment:
     SERVICE_NAME: redis

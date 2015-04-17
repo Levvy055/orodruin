@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.0'
+gem 'rails', '4.2.1'
 
 gem 'pg'
 
@@ -58,7 +58,7 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth-vkontakte'
 
 # Simplify views using decorators
-gem 'draper', '~> 1.4.0'
+gem 'draper', '~> 2.1.0'
 
 # Nicer views template engine
 gem 'curly-templates', '~> 2.3'
