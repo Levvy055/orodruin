@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "Easy convention management system.",
   "dependencies": {
-    "6to5ify": "*",
-    "browserify": "*",
+    "babelify": "*",
+    "browserify": "~> 6.3",
+    "browserify-incremental": "^1.4.0",
     "jquery": "*",
     "jquery-ujs": "*",
     "nprogress": "*"
