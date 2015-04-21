@@ -71,7 +71,7 @@ gem 'emoji'
 gem 'escape_utils'
 
 # Allow social translations
-gem 'localeapp'
+gem 'localeapp', group: [:production]
 gem 'r18n-rails'
 
 # Tracking

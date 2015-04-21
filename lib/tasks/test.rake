@@ -6,7 +6,7 @@ namespace :test do
   end
 
   desc 'Travis-CI task'
-  task ci: %i(test:all konacha:run spinach)
+  task ci: %i(test konacha:run spinach)
 end
 
 Rake::Task['test'].enhance ['test:services']

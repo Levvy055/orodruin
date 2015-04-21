@@ -1,4 +1,4 @@
-worker_processes((ENV['WEB_CONCURRENCY'] || 16).to_i)
+worker_processes((ENV['WEB_CONCURRENCY'] || 4).to_i)
 timeout 15
 preload_app true
 
