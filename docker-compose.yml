@@ -10,6 +10,7 @@ app:
     - 5000:5000
   environment:
     SERVICE_NAME: app
+    DATABASE_URL: postgresql://postgres:@db/
 
 worker:
   build: .
@@ -21,6 +22,7 @@ worker:
     - redis
   environment:
     SERVICE_NAME: worker
+    DATABASE_URL: postgresql://postgres:@db/
 
 db:
   image: postgres:9.4
