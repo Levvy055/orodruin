@@ -23,38 +23,17 @@ provide any tool that will allow work them together.
 
 ## Usage
 
-You will need:
-
-- \*NIX system to run (on Windows I suggest you to create VM)
-- [Bower][bower]
-- Ruby 2.1.2
-- Bundler
-- [Redis]
-
-The best way to install Ruby is using [rbenv][rbenv].
+You will need [Docker][docker] and [Docker Compose][compose]
 
 1. Clone this repo using
 
         git clone https://github.com/eriador/orodruin.git
 
-2. Install all dependencies
+2. Build and run all needed containers
 
-        bundle install
-        bower install
+        docker-compose up
 
-3. Check if all tests pass
-
-        ./bin/rake test
-
-4. Run redis server (in redis directory)
-        
-        src/redis-server
-
-5. Run server
-
-        ./bin/foreman start
-
-5. Visit <http://localhost:5000>.
+3. Visit <http://localhost:5000>.
 
 ## Badges
 
@@ -90,6 +69,5 @@ Before anything read `CONTRIBUTION.md`.
 
 [SZIM]: http://projektszim.wordpress.com/ "System Zarządzania Imprezami Masowymi"
 [Pyrkon]: http://www.pyrkon.pl/ "Pyrkon - Poznań's Fantasy Convention'"
-[bower]: http://bower.io/ "Bower package manager"
-[rbenv]: https://github.com/sstephenson/rbenv "Ruby version manager"
-[Redis]: http://redis.io/download "Redis"
+[docker]: https://www.docker.com/ "Docker is an open platform for developers and sysadmins of distributed applications."
+[compose]: https://docs.docker.com/compose/ "Compose is a tool for defining and running complex applications with Docker."
