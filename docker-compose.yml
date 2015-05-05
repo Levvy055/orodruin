@@ -1,28 +1,29 @@
 app:
   build: .
-  command: unicorn -c config/unicorn.rb -p 5000
   volumes:
     - .:/app
-  links:
-    - db
-    - redis
-  ports:
-    - 5000:5000
   environment:
-    SERVICE_NAME: app
     DATABASE_URL: postgresql://postgres:@db/
 
-worker:
-  build: .
-  command: sidekiq -C config/sidekiq.yml
-  volumes:
-    - .:/app
+web:
+  extends:
+    file: docker-compose.yml
+    service: app
+  command: unicorn -c config/unicorn.rb -p 5000
+  ports:
+    - 5000:5000
   links:
     - db
     - redis
-  environment:
-    SERVICE_NAME: worker
-    DATABASE_URL: postgresql://postgres:@db/
+
+worker:
+  extends:
+    file: docker-compose.yml
+    service: app
+  command: sidekiq -C config/sidekiq.yml
+  links:
+    - db
+    - redis
 
 db:
   image: postgres:9.4
