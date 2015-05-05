@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.2.2'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 
@@ -10,7 +12,7 @@ gem 'browserify-rails'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0.0'
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '~> 3.3.4'
 gem 'autoprefixer-rails'
 
 # Use Uglifier as compressor for JavaScript assets
@@ -88,14 +90,14 @@ gem 'logstash-logger'
 
 gem 'audited'
 
-gem 'skylight'
-
 group :doc do
   gem 'yard', require: false
   gem 'yard-tomdoc', require: false
 end
 
 group :development do
+  gem 'pghero'
+
   gem 'web-console', '~> 2.0'
 
   # Process management
