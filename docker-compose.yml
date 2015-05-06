@@ -1,9 +1,9 @@
 app:
   build: .
   volumes:
-    - .:/app
+    - ".:/app"
   environment:
-    DATABASE_URL: postgresql://postgres:@db/
+    DATABASE_URL: postgresql://postgres@db/
 
 web:
   extends:
@@ -27,10 +27,6 @@ worker:
 
 db:
   image: postgres:9.4
-  environment:
-    SERVICE_NAME: postgres
 
 redis:
   image: redis:2
-  environment:
-    SERVICE_NAME: redis

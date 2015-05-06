@@ -18,9 +18,6 @@ I've created this system as a replacement for [SZIM][SZIM], which was created
 by my friend in PHP as a management system for [Pyrkon][Pyrkon]. It is quite
 nice tool, but lack some flexibility and API for developers.
 
-Also I needed to create e-learning platform for volunteers, and SZIM doesn't
-provide any tool that will allow work them together.
-
 ## Usage
 
 You will need [Docker][docker] and [Docker Compose][compose]
@@ -29,7 +26,15 @@ You will need [Docker][docker] and [Docker Compose][compose]
 
         git clone https://github.com/eriador/orodruin.git
 
-2. Build and run all needed containers
+2. Build all needed containers
+
+        docker-compose build
+
+3. Setup database
+
+        docker-compose run web 'rake db:setup'
+
+4. Run app
 
         docker-compose up
 
