@@ -166,8 +166,6 @@ GEM
     fastercsv (1.5.5)
     ffaker (2.0.0)
     ffi (1.9.8)
-    foreman (0.78.0)
-      thor (~> 0.19.1)
     formatador (0.2.5)
     geocoder (1.2.8)
     gherkin-ruby (0.3.2)
@@ -527,7 +525,6 @@ DEPENDENCIES
   escape_utils
   fabrication
   ffaker
-  foreman
   grape (~> 0.11.0)
   grape-entity
   guard (~> 2.12.0)

@@ -98,9 +98,6 @@ group :development do
 
   gem 'web-console', '~> 2.0'
 
-  # Process management
-  gem 'foreman', require: false
-
   # Style checking
   gem 'rubocop', require: false
 
