@@ -10,7 +10,7 @@ describe EmojisHelper do
   subject { emoji_tag(emoji) }
 
   it 'has valid src' do
-    assert_attr_equal '//www.tortue.me/emoji/heart.png', subject, :src
+    assert_attr_equal 'https://www.tortue.me/emoji/heart.png', subject, :src
   end
 
   it 'belongs to .emoji class' do
