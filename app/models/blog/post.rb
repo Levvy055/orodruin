@@ -12,6 +12,12 @@ class Blog::Post < ActiveRecord::Base
 
     self[:text] = parser.call
   end
+
+  class Entity < Grape::Entity
+    expose :author
+    expose :title
+    expose :text
+  end
 end
 
 # == Schema Information
