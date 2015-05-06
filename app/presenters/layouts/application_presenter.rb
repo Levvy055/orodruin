@@ -1,6 +1,11 @@
 class Layouts::ApplicationPresenter < Curly::Presenter
   def title
-    ['Orodruin', yield(:title)].compact.join(' | ')
+    title = yield(:title)
+    if title.empty?
+      'Orodruin'
+    else
+      ['Orodruin', yield(:title)].join(' | ')
+    end
   end
 
   def stylesheets(file: 'application', media: 'all')
