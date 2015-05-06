@@ -1,12 +1,7 @@
 class UsersAPI < Grape::API
-  namespace 'users'
+  prefix 'users'
 
-  desc 'Get user info'
-  params do
-    requires :name, type: String, desc: 'User nickname'
-  end
-  get ':name' do
-    user = User.find_by_nickname(params[:name])
-    present user
+  get '/:nickname' do
+    present User.find_by_nickname(params[:nickname])
   end
 end

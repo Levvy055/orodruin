@@ -22,8 +22,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'grape', '~> 0.11.0'
 # Build JSON APIs with ease.
 gem 'grape-entity'
-# Documentation
-gem 'grape-swagger'
 
 # Use jquery as the JavaScript library
 # gem 'jquery-rails'
