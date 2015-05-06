@@ -9,5 +9,7 @@ Rails.application.routes.draw do
 
   mount API => '/api'
 
+  mount PgHero::Engine, at: 'pghero' if Rails.env.development?
+
   root to: 'blog/posts#index'
 end
