@@ -115,10 +115,6 @@ group :development do
 
   # STFU
   gem 'quiet_assets'
-
-  # Automate things
-  gem 'guard', '~> 2.12.0'
-  gem 'guard-minitest'
 end
 
 group :development, :test do
