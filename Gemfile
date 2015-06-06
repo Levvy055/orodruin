@@ -46,9 +46,9 @@ gem 'carrierwave'
 gem 'mini_magick'
 
 # User management
-gem 'devise', '~> 3.4.0'
-gem 'cancancan', '~> 1.10.0'
+gem 'devise', '~> 3.5.0'
 gem 'rolify', '~> 4.0.0'
+gem 'pundit'
 
 # OAuth sign up
 gem 'omniauth'
@@ -64,7 +64,7 @@ gem 'draper', '~> 2.1.0'
 gem 'curly-templates', '~> 2.3'
 
 # Lightweight markup language for blog posts (Markdown in this case)
-gem 'redcarpet', '~> 3.2.0'
+gem 'redcarpet', '~> 3.3.0'
 gem 'emoji'
 
 # Faster HTML escaping
@@ -87,6 +87,8 @@ gem 'lograge'
 gem 'logstash-logger'
 
 gem 'audited'
+
+gem 'capistrano', require: false
 
 group :doc do
   gem 'yard', require: false
