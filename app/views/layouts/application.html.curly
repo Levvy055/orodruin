@@ -9,9 +9,10 @@
 
     {{icons}}
   </head>
-  <body class="{{body_class}}">
+  <body class="{{ body_class }}">
+    {{ navbar }}
     <div class="content-fluid">
-      {{body}}
+      {{ body }}
     </div>
   </body>
 </html>

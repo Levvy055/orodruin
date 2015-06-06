@@ -31,6 +31,10 @@ class Layouts::ApplicationPresenter < Curly::Presenter
     ].join('').html_safe
   end
 
+  def navbar
+    render 'components/navbar'
+  end
+
   def body_class
     params[:controller].tr('/', ' ')
   end
