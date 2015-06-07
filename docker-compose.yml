@@ -1,14 +1,9 @@
-app:
+web:
   build: .
   volumes:
-    - ".:/app"
+    - ".:/usr/src/app"
   environment:
     DATABASE_URL: postgresql://postgres@db/
-
-web:
-  extends:
-    file: docker-compose.yml
-    service: app
   command: unicorn -c config/unicorn.rb -p 5000
   ports:
     - 5000:5000
@@ -17,9 +12,11 @@ web:
     - redis
 
 worker:
-  extends:
-    file: docker-compose.yml
-    service: app
+  build: .
+  volumes:
+    - ".:/usr/src/app"
+  environment:
+    DATABASE_URL: postgresql://postgres@db/
   command: sidekiq -C config/sidekiq.yml
   links:
     - db

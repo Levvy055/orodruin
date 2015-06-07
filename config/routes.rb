@@ -7,7 +7,9 @@ Rails.application.routes.draw do
     root 'posts#index'
   end
 
-  mount API => '/api'
+  match '/admin(/*other)', to: 'admin#index', via: :all
+
+  mount API, at: '/api'
 
   mount PgHero::Engine, at: 'pghero' if Rails.env.development?
 
