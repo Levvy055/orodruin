@@ -1,7 +1,7 @@
 // For more information see: http://emberjs.com/guides/routing/
 
-Admin.BlogPostsRoute = Ember.Route.extend({
+Admin.UsersRoute = Ember.Route.extend({
   model: function() {
-    return this.store.find('blog.post');
+    return this.store.find('user');
   }
 });

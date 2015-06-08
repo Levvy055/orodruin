@@ -17,8 +17,7 @@ gem 'uglifier', '>= 1.3.0'
 
 # API builder
 gem 'grape', '~> 0.11.0'
-# Build JSON APIs with ease.
-gem 'grape-entity'
+gem 'active_model_serializers'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -28,7 +27,7 @@ gem 'ember-source', '~> 1.12.0'
 # Turbolinks makes following links in your web application faster.
 # Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
-gem 'nprogress-rails'
+gem 'pace-rails'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 

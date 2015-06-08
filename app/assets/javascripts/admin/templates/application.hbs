@@ -3,8 +3,11 @@
 <nav>
   <ul>
     <li>{{#link-to 'index'}}Home{{/link-to}}</li>
+    <li>{{#link-to 'users'}}Users{{/link-to}}</li>
     <li>{{#link-to 'blog.posts'}}Blog posts{{/link-to}}</li>
   </ul>
 </nav>
 
-{{outlet}}
+<div class="container-fluid">
+  {{ outlet }}
+</div>

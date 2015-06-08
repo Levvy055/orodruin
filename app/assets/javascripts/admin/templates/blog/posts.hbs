@@ -2,4 +2,8 @@
 
 <p>Your content here.</p>
 
-{{outlet}}
+<ul>
+  {{#each post in model}}
+    <li><h3>{{post.title}}</h3>{{{post.text}}}</li>
+  {{/each}}
+</ul>

@@ -43,15 +43,15 @@ ActiveRecord::Schema.define(version: 20150606111017) do
   add_index "auth_providers", ["user_id"], name: "index_auth_providers_on_user_id", using: :btree
 
   create_table "blog_assets", force: :cascade do |t|
-    t.string   "name",                       null: false
-    t.string   "description",   default: ""
+    t.string   "name",                     null: false
+    t.string   "description", default: ""
     t.string   "asset"
-    t.integer  "blog_posts_id"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.integer  "post_id"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
-  add_index "blog_assets", ["blog_posts_id"], name: "index_blog_assets_on_blog_posts_id", using: :btree
+  add_index "blog_assets", ["post_id"], name: "index_blog_assets_on_post_id", using: :btree
 
   create_table "blog_posts", force: :cascade do |t|
     t.text     "text_raw"

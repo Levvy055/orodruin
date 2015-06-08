@@ -6,7 +6,7 @@ class CreateBlogAssets < ActiveRecord::Migration
 
       t.string :asset
 
-      t.references :blog_posts, index: true
+      t.references :post, index: true
 
       t.timestamps null: false
     end

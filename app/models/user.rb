@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :omniauthable,
-         :recoverable, :rememberable, :trackable, :validatable,
+         :recoverable, :rememberable, :trackable, :validatable, :confirmable,
          omniauth_providers: [:facebook, :google_oauth2]
 
   has_many :participations
@@ -27,15 +27,7 @@ class User < ActiveRecord::Base
 
   # Public: Find user by nickname case-insensitive
   def self.find_by_nickname(nickname)
-    where('LOWER(nickname) = ?', nickname.downcase).first
-  end
-
-  # Internal: Describe user entity
-  class Entity < Grape::Entity
-    expose :first_name
-    expose :last_name
-    expose :nickname
-    expose :email
+    find_by('LOWER(nickname) = ?', nickname.downcase)
   end
 end
 

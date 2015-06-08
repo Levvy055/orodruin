@@ -9,4 +9,5 @@ Admin.Router.map(function() {
   this.route('blog', function() {
     this.resource('blog.posts', { path: '/posts' });
   });
+  this.resource('users');
 });
