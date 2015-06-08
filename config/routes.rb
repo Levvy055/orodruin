@@ -13,5 +13,9 @@ Rails.application.routes.draw do
 
   mount PgHero::Engine, at: 'pghero' if Rails.env.development?
 
+  %w(404 422 500).each do |code|
+    get code, to: 'error#show', code: code
+  end
+
   root to: 'blog/posts#index'
 end
