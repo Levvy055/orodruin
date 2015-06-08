@@ -1,0 +1,13 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Admin panel</title>
+    {{stylesheets}}
+    {{javascripts}}
+
+    {{icons}}
+  </head>
+  <body>
+    {{ body }}
+  </body>
+</html>

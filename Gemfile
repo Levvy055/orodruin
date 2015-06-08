@@ -7,9 +7,6 @@ gem 'rails', '4.2.1'
 
 gem 'pg'
 
-# Use Browserify
-gem 'browserify-rails'
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0.0'
 gem 'bootstrap-sass', '~> 3.3.4'
@@ -24,10 +21,14 @@ gem 'grape', '~> 0.11.0'
 gem 'grape-entity'
 
 # Use jquery as the JavaScript library
-# gem 'jquery-rails'
+gem 'jquery-rails'
+gem 'ember-rails'
+gem 'ember-source', '~> 1.12.0'
+
 # Turbolinks makes following links in your web application faster.
 # Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
+gem 'nprogress-rails'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 

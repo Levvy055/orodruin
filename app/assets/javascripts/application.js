@@ -1,3 +1,4 @@
 //= require_self
-
-import './components/nprogress';
+//= require jquery
+//= require jquery_ujs
+//= require_tree ./components

@@ -1,5 +1,4 @@
-import * as NProgress from 'nprogress';
-import * as $ from 'jquery';
+//= require nprogress
 
 NProgress.configure({ showSpinner: false });
 
