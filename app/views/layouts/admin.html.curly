@@ -2,8 +2,10 @@
 <html>
   <head>
     <title>Admin panel</title>
+    {{stylesheets}}
+    {{javascripts}}
 
-    {{ js }}
+    {{icons}}
   </head>
   <body>
     {{ body }}
