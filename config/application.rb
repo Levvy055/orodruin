@@ -12,6 +12,8 @@ module Orodruin
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
+    config.exceptions_app = self.routes
+
     config.assets.precompile += %w(
       admin/application.js
       admin/templates/all.js
