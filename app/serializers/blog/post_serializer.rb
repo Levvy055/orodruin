@@ -16,7 +16,8 @@
 #
 
 class Blog::PostSerializer < ActiveModel::Serializer
-  attributes :id, :title, :text
+  attributes :id, :title, :text, :created_at, :updated_at
 
-  has_many :assets, class_name: 'Blog::Asset'
+  has_one :author
+  has_many :assets
 end
