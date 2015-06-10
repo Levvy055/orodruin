@@ -5,8 +5,8 @@ class Blog::Posts::PostPresenter < Curly::Presenter
     link_to(@post.title, @post)
   end
 
-  def author_name(nickname: false)
-    author.name(nickname)
+  def author_name
+    author.nickname
   end
 
   def text
@@ -20,6 +20,6 @@ class Blog::Posts::PostPresenter < Curly::Presenter
   private
 
   def author
-    @post.author.decorate
+    @post.author
   end
 end
