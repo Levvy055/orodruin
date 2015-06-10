@@ -32,7 +32,7 @@ You will need [Docker][docker] and [Docker Compose][compose]
 
 3. Setup database
 
-        docker-compose run web 'rake db:setup'
+        docker-compose run web rake db:setup RAILS_ENV=development
 
 4. Run app
 
