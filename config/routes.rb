@@ -1,6 +1,16 @@
 Rails.application.routes.draw do
   devise_for :users
 
+  namespace :api do
+    resources :users do
+      collection { get 'me' }
+    end
+
+    namespace :blog do
+      resources :posts
+    end
+  end
+
   namespace :blog do
     resources :posts
 
@@ -8,8 +18,6 @@ Rails.application.routes.draw do
   end
 
   match '/admin(/*other)', to: 'admin#index', via: :all
-
-  mount API, at: '/api'
 
   mount PgHero::Engine, at: 'pghero' if Rails.env.development?
 
