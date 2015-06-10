@@ -10,13 +10,13 @@ gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0.0'
 gem 'bootstrap-sass', '~> 3.3.4'
+gem 'font-awesome-sass', '~> 4.3.0'
 gem 'autoprefixer-rails'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
 # API builder
-gem 'grape', '~> 0.11.0'
 gem 'active_model_serializers'
 
 # Use jquery as the JavaScript library
@@ -30,6 +30,12 @@ gem 'turbolinks'
 gem 'pace-rails'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
+
+# Bower assets
+source 'https://rails-assets.org' do
+  gem 'rails-assets-momentjs'
+  gem 'rails-assets-js-md5'
+end
 
 # Spring speeds up development by keeping your application running in the
 # background. Read more: https://github.com/rails/spring
@@ -56,9 +62,6 @@ gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-vkontakte'
-
-# Simplify views using decorators
-gem 'draper', '~> 2.1.0'
 
 # Nicer views template engine
 gem 'curly-templates', '~> 2.3'
@@ -117,6 +120,10 @@ group :development do
 
   # STFU
   gem 'quiet_assets'
+
+  # Profile application
+  gem 'rack-mini-profiler'
+  gem 'flamegraph'
 end
 
 group :development, :test do
