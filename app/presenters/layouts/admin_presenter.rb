@@ -1,5 +1,5 @@
 class Layouts::AdminPresenter < Curly::Presenter
-  def stylesheets(file: 'application', media: 'all')
+  def stylesheets(file: 'admin/application', media: 'all')
     stylesheet_link_tag(file,
                         media: media,
                         'data-turbolinks-track' => true)
@@ -17,6 +17,14 @@ class Layouts::AdminPresenter < Curly::Presenter
       favicons(sizes: [16, 32, 96, 160, 196]),
       windows_tile(color: '#da532c', image: '/mstile-144x144.png')
     ].join('').html_safe
+  end
+
+  def locale
+    I18n.locale
+  end
+
+  def user_id
+    current_user.id
   end
 
   def body
