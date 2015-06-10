@@ -5,9 +5,14 @@
     {{stylesheets}}
     {{javascripts}}
 
+    <script>
+      moment.locale("{{locale}}");
+      Admin.currentUserId = {{user_id}};
+    </script>
+
     {{icons}}
   </head>
-  <body>
+  <body class="admin">
     {{ body }}
   </body>
 </html>

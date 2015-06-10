@@ -1,0 +1,32 @@
+.sidebar
+  +make-xs-column(2, 0)
+
+  position: fixed
+  left: 0
+  top: 0
+
+  height: 100%
+
+  border-radius: 0
+
+  background: $navbar-inverse-bg
+
+.sidebar-nav
+  li
+    +clearfix
+
+    display: block
+
+    width: 100%
+    height: 2.5em
+
+    a
+      height: 100%
+      width: 100%
+    .icon
+      float: left
+      font-size: 1.2em
+      margin: 0 auto
+      width: 20px
+    .desc
+      float: right

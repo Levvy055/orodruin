@@ -17,6 +17,7 @@ module Orodruin
     config.assets.precompile += %w(
       admin/application.js
       admin/templates/all.js
+      admin/application.css
     )
     config.ember.app_name = 'Admin'
     config.ember.ember_path = 'app/assets/javascripts/admin/'

@@ -13,10 +13,10 @@
     <div id="navbar-collapse" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
         {{ blog_item }}
-        <li><a href="#">Link 2</a></li>
-        <li><a href="#">Link 3</a></li>
-        <li><a href="#">Link 4</a></li>
-        <li><a href="#">Link 5</a></li>
+        <li><a href="#">Program</a></li>
+        <li><a href="#">Guests</a></li>
+        <li><a href="#">Location</a></li>
+        <li><a href="#">FAQ</a></li>
       </ul>
     </div>
   </div>
