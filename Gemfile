@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby '2.2.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.1'
+gem 'rails', '4.2.2'
 
 gem 'pg'
 
@@ -22,7 +22,7 @@ gem 'active_model_serializers'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'ember-rails'
-gem 'ember-source', '~> 1.12.0'
+gem 'ember-source', '~> 1.13.0'
 
 # Turbolinks makes following links in your web application faster.
 # Read more: https://github.com/rails/turbolinks
