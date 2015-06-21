@@ -36,6 +36,10 @@ module Orodruin
 
     config.lograge.enabled = true
 
+    config.action_mailer.default_url_options = {
+      host: 'https://orodruin.io'
+    }
+
     config.generators do |g|
       g.test_framework      :minitest, fixture_replacement: :fabrication, spec: true
       g.fixture_replacement :fabrication, dir: 'test/fabricators'

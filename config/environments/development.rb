@@ -45,5 +45,7 @@ Rails.application.configure do
     Bullet.rails_logger  = true
     Bullet.bullet_logger = true
     Bullet.console       = true
+
+    Rack::MiniProfiler.config.position = 'right'
   end
 end
