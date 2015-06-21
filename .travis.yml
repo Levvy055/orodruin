@@ -6,9 +6,11 @@ addons:
   postgresql: '9.3'
 env:
   - DB_USER=postgres
+    RAILS_ENV=test
 before_script:
   - psql -U postgres -c 'CREATE DATABASE orodruin_test;'
   - cp config/database.yml.travis config/database.yml
+  - bin/rake db:setup
 services:
   - redis-server
 script:

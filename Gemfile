@@ -123,6 +123,7 @@ group :development do
 
   # Profile application
   gem 'rack-mini-profiler'
+  gem 'stackprof'
   gem 'flamegraph'
 end
 
