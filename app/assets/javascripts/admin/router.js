@@ -6,8 +6,10 @@ Admin.Router.reopen({
 });
 
 Admin.Router.map(function() {
-  this.route('blog', function() {
-    this.resource('blog.posts', { path: '/posts' });
+  this.resource('blog.posts', { path: '/blog/posts' }, function() {
+    this.route('show', { path: '/:id' });
   });
-  this.resource('users');
+  this.resource('users', function() {
+    this.route('show', { path: '/:id' });
+  });
 });

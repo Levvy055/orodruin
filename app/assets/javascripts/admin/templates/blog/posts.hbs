@@ -1,9 +1,18 @@
-<h1>BlogPosts</h1>
-
-<p>Your content here.</p>
-
-<ul>
-  {{#each post in model}}
-    <li><h3>{{post.title}}</h3>{{{post.text}}}</li>
-  {{/each}}
-</ul>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Last change</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each post in model}}
+      <tr class="clickable" {{action 'show' post}}>
+        <td>{{post.title}}</td>
+        <td>{{#link-to 'users.show' post.author}}{{post.author.fullName}}{{/link-to}}</td>
+        <td>{{format-time post.updatedAt}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

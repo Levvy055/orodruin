@@ -1,13 +1,30 @@
-<h1>Admin Panel</h1>
-
-<nav>
-  <ul>
-    <li>{{#link-to 'index'}}Home{{/link-to}}</li>
-    <li>{{#link-to 'users'}}Users{{/link-to}}</li>
-    <li>{{#link-to 'blog.posts'}}Blog posts{{/link-to}}</li>
+<nav class="sidebar">
+  <div class="user-panel">
+    {{gravatar-img email=model.email}}
+    <div class="user-data">
+      <div class="user-name">{{model.nickname}}</div>
+    </div>
+  </div>
+  <ul class="nav sidebar-nav">
+    <li>{{#link-to 'index'}}<span class="icon fa fa-dashboard"></span><span class="desc hidden-xs">Dashboard</span>{{/link-to}}</li>
+    <li>{{#link-to 'users'}}<span class="icon fa fa-user"></span><span class="desc hidden-xs">Users</span>{{/link-to}}</li>
+    <li>{{#link-to 'blog.posts'}}<span class="icon fa fa-file-text"></span><span class="desc hidden-xs">Blog</span>{{/link-to}}</li>
   </ul>
 </nav>
 
 <div class="container-fluid">
-  {{ outlet }}
+  <div class="col col-xs-2"></div>
+  <div class="col col-xs-10">
+    <div class="container-fluid">
+      {{ outlet }}
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid content-box">
+  <div class="col col-xs-12">
+    <div class="container-fluid">
+      {{ outlet 'modal' }}
+    </div>
+  </div>
 </div>
