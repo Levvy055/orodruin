@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150622115034) do
+ActiveRecord::Schema.define(version: 20150622132630) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -80,13 +80,6 @@ ActiveRecord::Schema.define(version: 20150622115034) do
 
   add_index "blog_posts", ["author_id"], name: "index_blog_posts_on_author_id", using: :btree
 
-  create_table "participants_roles", id: false, force: :cascade do |t|
-    t.integer "participant_id"
-    t.integer "role_id"
-  end
-
-  add_index "participants_roles", ["participant_id", "role_id"], name: "index_participants_roles_on_participant_id_and_role_id", using: :btree
-
   create_table "roles", force: :cascade do |t|
     t.string   "name"
     t.integer  "resource_id"
@@ -112,6 +105,10 @@ ActiveRecord::Schema.define(version: 20150622115034) do
     t.string   "activation_state"
     t.string   "activation_token"
     t.datetime "activation_token_expires_at"
+    t.string   "nickname",                        null: false
+    t.string   "first_name"
+    t.string   "last_name"
+    t.date     "birthday"
   end
 
   add_index "users", ["activation_token"], name: "index_users_on_activation_token", using: :btree

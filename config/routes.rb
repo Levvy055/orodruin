@@ -15,6 +15,9 @@ Rails.application.routes.draw do
     root 'posts#index'
   end
 
+  get '/login', to: 'users/sessions#new', as: 'login'
+  post '/login', to: 'users/sessions#create'
+
   match '/admin(/*other)', to: 'admin#index', via: :all
 
   mount PgHero::Engine, at: 'pghero' if Rails.env.development?

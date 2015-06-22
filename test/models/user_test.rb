@@ -16,6 +16,10 @@
 #  activation_state                :string
 #  activation_token                :string           indexed
 #  activation_token_expires_at     :datetime
+#  nickname                        :string           not null
+#  first_name                      :string
+#  last_name                       :string
+#  birthday                        :date
 #
 # Indexes
 #

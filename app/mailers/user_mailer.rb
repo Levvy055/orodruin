@@ -1,4 +1,4 @@
 class UserMailer < ApplicationMailer
-  def activation_email_needed
+  def activation_needed_email(user)
   end
 end
