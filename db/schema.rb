@@ -11,11 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150621211550) do
+ActiveRecord::Schema.define(version: 20150622115034) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "uuid-ossp"
+
+  create_table "ahoy_events", id: :uuid, default: nil, force: :cascade do |t|
+    t.uuid     "visit_id"
+    t.integer  "user_id"
+    t.string   "name"
+    t.text     "properties"
+    t.datetime "time"
+  end
+
+  add_index "ahoy_events", ["time"], name: "index_ahoy_events_on_time", using: :btree
+  add_index "ahoy_events", ["user_id"], name: "index_ahoy_events_on_user_id", using: :btree
+  add_index "ahoy_events", ["visit_id"], name: "index_ahoy_events_on_visit_id", using: :btree
 
   create_table "ahoy_messages", force: :cascade do |t|
     t.string   "token"
@@ -36,30 +48,15 @@ ActiveRecord::Schema.define(version: 20150621211550) do
   add_index "ahoy_messages", ["token"], name: "index_ahoy_messages_on_token", using: :btree
   add_index "ahoy_messages", ["user_id", "user_type"], name: "index_ahoy_messages_on_user_id_and_user_type", using: :btree
 
-  create_table "auth_applications", force: :cascade do |t|
-    t.string   "name",         null: false
-    t.uuid     "uid",          null: false
-    t.string   "secret",       null: false
-    t.string   "redirect_uri", null: false
-    t.integer  "owner_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
-
-  add_index "auth_applications", ["owner_id"], name: "index_auth_applications_on_owner_id", using: :btree
-  add_index "auth_applications", ["uid", "secret"], name: "index_auth_applications_on_uid_and_secret", using: :btree
-  add_index "auth_applications", ["uid"], name: "index_auth_applications_on_uid", using: :btree
-
-  create_table "auth_providers", force: :cascade do |t|
-    t.integer  "user_id"
-    t.string   "type"
+  create_table "authentications", force: :cascade do |t|
+    t.integer  "user_id",    null: false
+    t.string   "provider",   null: false
+    t.string   "uid",        null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "uid"
   end
 
-  add_index "auth_providers", ["type"], name: "index_auth_providers_on_type", using: :btree
-  add_index "auth_providers", ["user_id"], name: "index_auth_providers_on_user_id", using: :btree
+  add_index "authentications", ["provider", "uid"], name: "index_authentications_on_provider_and_uid", using: :btree
 
   create_table "blog_assets", force: :cascade do |t|
     t.string   "name",                     null: false
@@ -83,24 +80,6 @@ ActiveRecord::Schema.define(version: 20150621211550) do
 
   add_index "blog_posts", ["author_id"], name: "index_blog_posts_on_author_id", using: :btree
 
-  create_table "conventions", force: :cascade do |t|
-    t.string   "name"
-    t.date     "start"
-    t.date     "finish"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "participants", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "convention_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "participants", ["convention_id"], name: "index_participants_on_convention_id", using: :btree
-  add_index "participants", ["user_id"], name: "index_participants_on_user_id", using: :btree
-
   create_table "participants_roles", id: false, force: :cascade do |t|
     t.integer "participant_id"
     t.integer "role_id"
@@ -120,29 +99,54 @@ ActiveRecord::Schema.define(version: 20150621211550) do
   add_index "roles", ["name"], name: "index_roles_on_name", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.string   "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
+    t.string   "email",                           null: false
+    t.string   "crypted_password"
+    t.string   "salt"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "nickname",                            null: false
-    t.date     "birthday"
+    t.string   "remember_me_token"
+    t.datetime "remember_me_token_expires_at"
+    t.string   "reset_password_token"
+    t.datetime "reset_password_token_expires_at"
+    t.datetime "reset_password_email_sent_at"
+    t.string   "activation_state"
+    t.string   "activation_token"
+    t.datetime "activation_token_expires_at"
   end
 
-  add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
+  add_index "users", ["activation_token"], name: "index_users_on_activation_token", using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["remember_me_token"], name: "index_users_on_remember_me_token", using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", using: :btree
+
+  create_table "visits", id: :uuid, default: nil, force: :cascade do |t|
+    t.uuid     "visitor_id"
+    t.string   "ip"
+    t.text     "user_agent"
+    t.text     "referrer"
+    t.text     "landing_page"
+    t.integer  "user_id"
+    t.string   "referring_domain"
+    t.string   "search_keyword"
+    t.string   "browser"
+    t.string   "os"
+    t.string   "device_type"
+    t.integer  "screen_height"
+    t.integer  "screen_width"
+    t.string   "country"
+    t.string   "region"
+    t.string   "city"
+    t.string   "postal_code"
+    t.decimal  "latitude"
+    t.decimal  "longitude"
+    t.string   "utm_source"
+    t.string   "utm_medium"
+    t.string   "utm_term"
+    t.string   "utm_content"
+    t.string   "utm_campaign"
+    t.datetime "started_at"
+  end
+
+  add_index "visits", ["user_id"], name: "index_visits_on_user_id", using: :btree
 
 end

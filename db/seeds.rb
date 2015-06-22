@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+begin
+  require Rails.root.join('db', 'seeds', Rails.env)
+rescue LoadError
+  $stderr.puts "No seeds for #{Rails.env} environment"
+end

@@ -52,16 +52,9 @@ gem 'carrierwave'
 gem 'mini_magick'
 
 # User management
-gem 'devise', '~> 3.5.0'
+gem 'sorcery'
 gem 'rolify', '~> 4.0.0'
 gem 'pundit'
-
-# OAuth sign up
-gem 'omniauth'
-gem 'omniauth-facebook'
-gem 'omniauth-twitter'
-gem 'omniauth-google-oauth2'
-gem 'omniauth-vkontakte'
 
 # Nicer views template engine
 gem 'curly-templates', '~> 2.3'
