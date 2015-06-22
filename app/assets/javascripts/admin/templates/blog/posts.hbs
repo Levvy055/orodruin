@@ -7,7 +7,7 @@
     </tr>
   </thead>
   <tbody>
-    {{#each post in model}}
+    {{#each model as |post|}}
       <tr class="clickable" {{action 'show' post}}>
         <td>{{post.title}}</td>
         <td>{{#link-to 'users.show' post.author}}{{post.author.fullName}}{{/link-to}}</td>

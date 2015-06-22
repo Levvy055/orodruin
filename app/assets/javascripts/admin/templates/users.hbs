@@ -9,7 +9,7 @@
     </tr>
   </thead>
   <tbody>
-    {{#each user in model}}
+    {{#each model as |user|}}
       <tr class="clickable" {{action 'show' user}}>
         <td>{{user.nickname}}</td>
         <td>{{user.email}}</td>
