@@ -1,0 +1,17 @@
+<%= form_tag signin_path, class: 'signin-form' do %>
+  <div class="signin-form field name">
+    <%= label_tag :name %>
+    <%= text_field_tag :name %>
+  </div>
+  <div class="signin-form field password">
+    <%= label_tag :password %>
+    <%= password_field_tag %>
+  </div>
+  <div class="signin-form field remember-me">
+    <%= label_tag :remember_me %>
+    <%= check_box_tag :remember_me %>
+  </div>
+  <div class="signin-form submit">
+    <%= submit_tag 'Sign in' %>
+  </div>
+<% end %>

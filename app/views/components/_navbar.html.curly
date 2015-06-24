@@ -12,12 +12,14 @@
 
     <div id="navbar-collapse" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        {{ blog_item }}
+        <li>{{ blog_link }}</li>
         <li><a href="#">Program</a></li>
         <li><a href="#">Guests</a></li>
         <li><a href="#">Location</a></li>
         <li><a href="#">FAQ</a></li>
       </ul>
+
+      {{ user_menu }}
     </div>
   </div>
 </nav>

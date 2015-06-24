@@ -5,7 +5,9 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  private
+
   def not_authenticated
-    redirect_to login_path, alert: 'You must be logged in to show this page'
+    redirect_to signin_path, alert: 'You must be logged in to show this page'
   end
 end

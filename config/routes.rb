@@ -15,12 +15,15 @@ Rails.application.routes.draw do
     root 'posts#index'
   end
 
-  get '/login', to: 'users/sessions#new', as: 'login'
-  post '/login', to: 'users/sessions#create'
+  get '/signin', to: 'users/sessions#new', as: 'signin'
+  post '/signin', to: 'users/sessions#create'
+  delete '/signout', to: 'users/sessions#destroy', as: 'signout'
 
-  match '/admin(/*other)', to: 'admin#index', via: :all
+  scope '/admin' do
+    match '(/*other)', to: 'admin#index', via: :all
 
-  mount PgHero::Engine, at: 'pghero' if Rails.env.development?
+    mount PgHero::Engine, at: 'pghero' if Rails.env.development?
+  end
 
   %w(404 422 500).each do |code|
     get code, to: 'error#show', code: code

@@ -1,5 +1,5 @@
 class Users::Sessions::NewPresenter < Curly::Presenter
-  def login_form
-    render 'login_form'
+  def signin_form
+    render 'signin_form'
   end
 end
