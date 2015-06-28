@@ -99,6 +99,48 @@ ALTER SEQUENCE ahoy_messages_id_seq OWNED BY ahoy_messages.id;
 
 
 --
+-- Name: audits; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE audits (
+    id integer NOT NULL,
+    auditable_id integer,
+    auditable_type character varying,
+    associated_id integer,
+    associated_type character varying,
+    user_id integer,
+    user_type character varying,
+    username character varying,
+    action character varying,
+    audited_changes text,
+    version integer DEFAULT 0,
+    comment character varying,
+    remote_address character varying,
+    request_uuid character varying,
+    created_at timestamp without time zone
+);
+
+
+--
+-- Name: audits_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE audits_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: audits_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE audits_id_seq OWNED BY audits.id;
+
+
+--
 -- Name: authentications; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -197,6 +239,109 @@ CREATE SEQUENCE blog_posts_id_seq
 --
 
 ALTER SEQUENCE blog_posts_id_seq OWNED BY blog_posts.id;
+
+
+--
+-- Name: documentation_pages; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE documentation_pages (
+    id integer NOT NULL,
+    title character varying,
+    permalink character varying,
+    content text,
+    compiled_content text,
+    parent_id integer,
+    "position" integer,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone
+);
+
+
+--
+-- Name: documentation_pages_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE documentation_pages_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: documentation_pages_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE documentation_pages_id_seq OWNED BY documentation_pages.id;
+
+
+--
+-- Name: documentation_screenshots; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE documentation_screenshots (
+    id integer NOT NULL,
+    alt_text character varying
+);
+
+
+--
+-- Name: documentation_screenshots_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE documentation_screenshots_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: documentation_screenshots_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE documentation_screenshots_id_seq OWNED BY documentation_screenshots.id;
+
+
+--
+-- Name: nifty_attachments; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE nifty_attachments (
+    id integer NOT NULL,
+    parent_id integer,
+    parent_type character varying,
+    token character varying,
+    digest character varying,
+    role character varying,
+    file_name character varying,
+    file_type character varying,
+    data bytea,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone
+);
+
+
+--
+-- Name: nifty_attachments_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE nifty_attachments_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: nifty_attachments_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE nifty_attachments_id_seq OWNED BY nifty_attachments.id;
 
 
 --
@@ -331,6 +476,13 @@ ALTER TABLE ONLY ahoy_messages ALTER COLUMN id SET DEFAULT nextval('ahoy_message
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY audits ALTER COLUMN id SET DEFAULT nextval('audits_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY authentications ALTER COLUMN id SET DEFAULT nextval('authentications_id_seq'::regclass);
 
 
@@ -346,6 +498,27 @@ ALTER TABLE ONLY blog_assets ALTER COLUMN id SET DEFAULT nextval('blog_assets_id
 --
 
 ALTER TABLE ONLY blog_posts ALTER COLUMN id SET DEFAULT nextval('blog_posts_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY documentation_pages ALTER COLUMN id SET DEFAULT nextval('documentation_pages_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY documentation_screenshots ALTER COLUMN id SET DEFAULT nextval('documentation_screenshots_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY nifty_attachments ALTER COLUMN id SET DEFAULT nextval('nifty_attachments_id_seq'::regclass);
 
 
 --
@@ -379,6 +552,14 @@ ALTER TABLE ONLY ahoy_messages
 
 
 --
+-- Name: audits_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY audits
+    ADD CONSTRAINT audits_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: authentications_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -403,6 +584,30 @@ ALTER TABLE ONLY blog_posts
 
 
 --
+-- Name: documentation_pages_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY documentation_pages
+    ADD CONSTRAINT documentation_pages_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: documentation_screenshots_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY documentation_screenshots
+    ADD CONSTRAINT documentation_screenshots_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: nifty_attachments_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY nifty_attachments
+    ADD CONSTRAINT nifty_attachments_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: roles_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -424,6 +629,20 @@ ALTER TABLE ONLY users
 
 ALTER TABLE ONLY visits
     ADD CONSTRAINT visits_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: associated_index; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX associated_index ON audits USING btree (associated_id, associated_type);
+
+
+--
+-- Name: auditable_index; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX auditable_index ON audits USING btree (auditable_id, auditable_type);
 
 
 --
@@ -459,6 +678,20 @@ CREATE INDEX index_ahoy_messages_on_token ON ahoy_messages USING btree (token);
 --
 
 CREATE INDEX index_ahoy_messages_on_user_id_and_user_type ON ahoy_messages USING btree (user_id, user_type);
+
+
+--
+-- Name: index_audits_on_created_at; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_audits_on_created_at ON audits USING btree (created_at);
+
+
+--
+-- Name: index_audits_on_request_uuid; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX index_audits_on_request_uuid ON audits USING btree (request_uuid);
 
 
 --
@@ -546,6 +779,13 @@ CREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations USING btree (v
 
 
 --
+-- Name: user_index; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE INDEX user_index ON audits USING btree (user_id, user_type);
+
+
+--
 -- PostgreSQL database dump complete
 --
 
@@ -554,6 +794,12 @@ SET search_path TO "$user",public;
 INSERT INTO schema_migrations (version) VALUES ('20140416011605');
 
 INSERT INTO schema_migrations (version) VALUES ('20140501145459');
+
+INSERT INTO schema_migrations (version) VALUES ('20140711185212');
+
+INSERT INTO schema_migrations (version) VALUES ('20140724111844');
+
+INSERT INTO schema_migrations (version) VALUES ('20140724114255');
 
 INSERT INTO schema_migrations (version) VALUES ('20141122144400');
 
@@ -578,4 +824,6 @@ INSERT INTO schema_migrations (version) VALUES ('20150622115034');
 INSERT INTO schema_migrations (version) VALUES ('20150622115708');
 
 INSERT INTO schema_migrations (version) VALUES ('20150622132630');
+
+INSERT INTO schema_migrations (version) VALUES ('20150628134605');
 

@@ -64,6 +64,9 @@ GEM
       parser (>= 2.2.0.pre.3, < 3.0)
     audited (4.2.0)
       rails-observers (~> 0.1.2)
+    audited-activerecord (4.2.0)
+      activerecord (~> 4.0)
+      audited (= 4.2.0)
     autoprefixer-rails (5.2.1)
       execjs
       json
@@ -462,6 +465,7 @@ DEPENDENCIES
   ahoy_matey
   annotate (~> 2.6.5)
   audited
+  audited-activerecord (~> 4.0)
   autoprefixer-rails
   bootstrap-sass (~> 3.3.4)
   brakeman

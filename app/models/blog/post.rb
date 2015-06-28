@@ -1,4 +1,6 @@
 class Blog::Post < ActiveRecord::Base
+  audited
+
   belongs_to :author, class_name: 'User'
   has_many :assets, class_name: 'Blog::Asset'
 

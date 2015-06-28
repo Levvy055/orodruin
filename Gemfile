@@ -83,6 +83,7 @@ gem 'lograge'
 gem 'logstash-logger'
 
 gem 'audited'
+gem 'audited-activerecord', '~> 4.0'
 
 gem 'capistrano', require: false
 
