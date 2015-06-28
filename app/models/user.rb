@@ -1,5 +1,19 @@
 class User < ActiveRecord::Base
   authenticates_with_sorcery!
+
+  validates :email,
+            uniqueness: true,
+            presence: true, format: { with: /\A[^@]+@[^@]+\z/ }
+  validates :nickname,
+            uniqueness: true,
+            format: { with: /\A[a-z0-9.-_]+\z/i }
+
+  def age(till: Time.zone.today)
+    age = till.year - birthday.year
+    age -= 1 if birthday.month > till.month ||
+                (birthday.month == till.month && birthday.day > till.day)
+    age
+  end
 end
 
 # == Schema Information

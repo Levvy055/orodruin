@@ -19,6 +19,10 @@ Rails.application.routes.draw do
   post '/signin', to: 'users/sessions#create'
   delete '/signout', to: 'users/sessions#destroy', as: 'signout'
 
+  resources :users do
+    member { get 'activate', as: 'activation' }
+  end
+
   scope '/admin' do
     match '(/*other)', to: 'admin#index', via: :all
 

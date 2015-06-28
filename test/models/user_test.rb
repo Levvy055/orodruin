@@ -32,9 +32,17 @@
 require "test_helper"
 
 describe User do
-  let(:user) { User.new }
+  subject(:user) { Fabricate.build(:user) }
 
-  it "must be valid" do
+  it 'must be valid' do
     value(user).must_be :valid?
+  end
+
+  describe 'age' do
+    subject(:user) { Fabricate.build(:user, birthday: Date.new(1993, 3, 16)) }
+
+    it 'calculate valid age' do
+      user.age(till: Date.new(2015, 6, 26)).must_equal 22
+    end
   end
 end

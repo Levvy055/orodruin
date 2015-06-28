@@ -23,7 +23,7 @@
 #
 # Indexes
 #
-#  index_users_on_confirmation_token    (confirmation_token) UNIQUE
+#  index_users_on_activation_token      (activation_token)
 #  index_users_on_email                 (email) UNIQUE
 #  index_users_on_remember_me_token     (remember_me_token)
 #  index_users_on_reset_password_token  (reset_password_token)
