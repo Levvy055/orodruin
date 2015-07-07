@@ -45,7 +45,7 @@ You will need [Docker][docker] and [Docker Compose][compose]
 * project build
   [![Build Status](https://travis-ci.org/eriador/orodruin.svg?branch=master)](https://travis-ci.org/eriador/orodruin)
   [![Code Climate](https://codeclimate.com/github/eriador/orodruin.png)](https://codeclimate.com/github/eriador/orodruin)
-  [![Coverage Status](https://coveralls.io/repos/eriador/orodruin/badge.png)](https://coveralls.io/r/eriador/orodruin)
+  [![Coverage Status](https://coveralls.io/repos/github/eriador/orodruin/badge.svg?branch=master)](https://coveralls.io/github/eriador/orodruin?branch=master)
 * documentation
   [![Inline docs](http://inch-ci.org/github/eriador/orodruin.png)](http://inch-ci.org/github/eriador/orodruin)
 * deps/security
