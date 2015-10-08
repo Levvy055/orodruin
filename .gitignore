@@ -26,4 +26,7 @@
 .localeapp
 /config/locales/*
 
+/.otto
+/.ottoid
+
 !**/.keep

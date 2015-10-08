@@ -85,8 +85,6 @@ gem 'logstash-logger'
 gem 'audited'
 gem 'audited-activerecord', '~> 4.0'
 
-gem 'capistrano', require: false
-
 group :doc do
   gem 'yard', require: false
   gem 'yard-tomdoc', require: false

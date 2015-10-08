@@ -1,0 +1,8 @@
+application {
+  name = "orodruin"
+  type = "ruby"
+
+  dependency {
+    source = "github.com/hashicorp/otto/examples/postgresql"
+  }
+}
