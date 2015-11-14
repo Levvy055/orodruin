@@ -29,7 +29,7 @@
 #  index_users_on_reset_password_token  (reset_password_token)
 #
 
-require "test_helper"
+require 'test_helper'
 
 describe User do
   subject(:user) { Fabricate.build(:user) }

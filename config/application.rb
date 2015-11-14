@@ -21,6 +21,7 @@ module Orodruin
       admin/templates/all.js
       admin/application.css
     )
+    config.assets.initialize_on_precompile = false
     config.ember.app_name = 'Admin'
     config.ember.ember_path = 'app/assets/javascripts/admin/'
     config.handlebars.templates_root = 'admin/templates'

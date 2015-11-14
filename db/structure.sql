@@ -242,109 +242,6 @@ ALTER SEQUENCE blog_posts_id_seq OWNED BY blog_posts.id;
 
 
 --
--- Name: documentation_pages; Type: TABLE; Schema: public; Owner: -; Tablespace: 
---
-
-CREATE TABLE documentation_pages (
-    id integer NOT NULL,
-    title character varying,
-    permalink character varying,
-    content text,
-    compiled_content text,
-    parent_id integer,
-    "position" integer,
-    created_at timestamp without time zone,
-    updated_at timestamp without time zone
-);
-
-
---
--- Name: documentation_pages_id_seq; Type: SEQUENCE; Schema: public; Owner: -
---
-
-CREATE SEQUENCE documentation_pages_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
---
--- Name: documentation_pages_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
---
-
-ALTER SEQUENCE documentation_pages_id_seq OWNED BY documentation_pages.id;
-
-
---
--- Name: documentation_screenshots; Type: TABLE; Schema: public; Owner: -; Tablespace: 
---
-
-CREATE TABLE documentation_screenshots (
-    id integer NOT NULL,
-    alt_text character varying
-);
-
-
---
--- Name: documentation_screenshots_id_seq; Type: SEQUENCE; Schema: public; Owner: -
---
-
-CREATE SEQUENCE documentation_screenshots_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
---
--- Name: documentation_screenshots_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
---
-
-ALTER SEQUENCE documentation_screenshots_id_seq OWNED BY documentation_screenshots.id;
-
-
---
--- Name: nifty_attachments; Type: TABLE; Schema: public; Owner: -; Tablespace: 
---
-
-CREATE TABLE nifty_attachments (
-    id integer NOT NULL,
-    parent_id integer,
-    parent_type character varying,
-    token character varying,
-    digest character varying,
-    role character varying,
-    file_name character varying,
-    file_type character varying,
-    data bytea,
-    created_at timestamp without time zone,
-    updated_at timestamp without time zone
-);
-
-
---
--- Name: nifty_attachments_id_seq; Type: SEQUENCE; Schema: public; Owner: -
---
-
-CREATE SEQUENCE nifty_attachments_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
---
--- Name: nifty_attachments_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
---
-
-ALTER SEQUENCE nifty_attachments_id_seq OWNED BY nifty_attachments.id;
-
-
---
 -- Name: roles; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -504,27 +401,6 @@ ALTER TABLE ONLY blog_posts ALTER COLUMN id SET DEFAULT nextval('blog_posts_id_s
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY documentation_pages ALTER COLUMN id SET DEFAULT nextval('documentation_pages_id_seq'::regclass);
-
-
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY documentation_screenshots ALTER COLUMN id SET DEFAULT nextval('documentation_screenshots_id_seq'::regclass);
-
-
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
---
-
-ALTER TABLE ONLY nifty_attachments ALTER COLUMN id SET DEFAULT nextval('nifty_attachments_id_seq'::regclass);
-
-
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
---
-
 ALTER TABLE ONLY roles ALTER COLUMN id SET DEFAULT nextval('roles_id_seq'::regclass);
 
 
@@ -581,30 +457,6 @@ ALTER TABLE ONLY blog_assets
 
 ALTER TABLE ONLY blog_posts
     ADD CONSTRAINT blog_posts_pkey PRIMARY KEY (id);
-
-
---
--- Name: documentation_pages_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
---
-
-ALTER TABLE ONLY documentation_pages
-    ADD CONSTRAINT documentation_pages_pkey PRIMARY KEY (id);
-
-
---
--- Name: documentation_screenshots_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
---
-
-ALTER TABLE ONLY documentation_screenshots
-    ADD CONSTRAINT documentation_screenshots_pkey PRIMARY KEY (id);
-
-
---
--- Name: nifty_attachments_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
---
-
-ALTER TABLE ONLY nifty_attachments
-    ADD CONSTRAINT nifty_attachments_pkey PRIMARY KEY (id);
 
 
 --
@@ -794,12 +646,6 @@ SET search_path TO "$user",public;
 INSERT INTO schema_migrations (version) VALUES ('20140416011605');
 
 INSERT INTO schema_migrations (version) VALUES ('20140501145459');
-
-INSERT INTO schema_migrations (version) VALUES ('20140711185212');
-
-INSERT INTO schema_migrations (version) VALUES ('20140724111844');
-
-INSERT INTO schema_migrations (version) VALUES ('20140724114255');
 
 INSERT INTO schema_migrations (version) VALUES ('20141122144400');
 
