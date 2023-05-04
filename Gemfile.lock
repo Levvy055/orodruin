@@ -453,7 +453,7 @@ GEM
       rack
       raindrops (~> 0.7)
     uniform_notifier (1.9.0)
-    user_agent_parser (2.3.0)
+    user_agent_parser (2.15.0)
     uuidtools (2.1.5)
     web-console (2.2.1)
       activemodel (>= 4.0)
